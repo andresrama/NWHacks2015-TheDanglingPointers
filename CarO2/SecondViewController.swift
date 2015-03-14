@@ -8,9 +8,22 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, CPTPlotDataSource {
     
+    
+    //Graph item outlet
     @IBOutlet weak var graphView: CPTGraphHostingView!
+    
+    
+    // Funcs to make the CPTPlotDataSource attribute true - Start
+    func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
+        return 4
+    }
+    
+    func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex idx: UInt) -> NSNumber! {
+        return idx+1
+    }
+    //End
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +44,7 @@ class SecondViewController: UIViewController {
         
         // add a pie plot
         var pie = CPTPieChart(frame: self.view.frame)
-        //pie.dataSource =
+        pie.dataSource = self
         pie.pieRadius = (self.view.frame.size.width * 0.9)/2
         graph.addPlot(pie)
         
