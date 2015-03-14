@@ -17,7 +17,6 @@
 		18C678C51AB3B3AE0014180C /* CarO2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678C41AB3B3AE0014180C /* CarO2Tests.swift */; };
 		18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */; };
 		517D5F671AB401BC0005815A /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D5F661AB401BC0005815A /* TabViewController.swift */; };
-		782574041AB4ADB200DB548B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782574031AB4ADB200DB548B /* API.swift */; };
 		78B884871AB4D47700338FD1 /* MojioClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884851AB4D47700338FD1 /* MojioClient.m */; };
 		78B884AF1AB4D4FE00338FD1 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8848A1AB4D4FE00338FD1 /* Address.m */; };
 		78B884B01AB4D4FE00338FD1 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8848C1AB4D4FE00338FD1 /* App.m */; };
@@ -68,7 +67,6 @@
 		18C678C41AB3B3AE0014180C /* CarO2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarO2Tests.swift; sourceTree = "<group>"; };
 		18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		517D5F661AB401BC0005815A /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		782574031AB4ADB200DB548B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		78B884841AB4D47700338FD1 /* MojioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MojioClient.h; sourceTree = "<group>"; };
 		78B884851AB4D47700338FD1 /* MojioClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MojioClient.m; sourceTree = "<group>"; };
 		78B884861AB4D47700338FD1 /* MojioSDKiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MojioSDKiOS.h; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 				18C678B51AB3B3AE0014180C /* Images.xcassets */,
 				18C678B71AB3B3AE0014180C /* LaunchScreen.xib */,
 				18C678AA1AB3B3AE0014180C /* Supporting Files */,
-				782574031AB4ADB200DB548B /* API.swift */,
 			);
 			path = CarO2;
 			sourceTree = "<group>";
@@ -426,7 +423,6 @@
 				78B884B91AB4D4FE00338FD1 /* Mojio.m in Sources */,
 				78B884B51AB4D4FE00338FD1 /* EventBroadcast.m in Sources */,
 				182DCBFE1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m in Sources */,
-				782574041AB4ADB200DB548B /* API.swift in Sources */,
 				78B884BA1AB4D4FE00338FD1 /* MojioResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
