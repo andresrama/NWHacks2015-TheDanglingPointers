@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182DCBFB1AB3E79C002308FC /* CarO2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 182DCBFA1AB3E79C002308FC /* CarO2.jpg */; };
 		18C678AD1AB3B3AE0014180C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678AC1AB3B3AE0014180C /* AppDelegate.swift */; };
 		18C678AF1AB3B3AE0014180C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678AE1AB3B3AE0014180C /* FirstViewController.swift */; };
 		18C678B11AB3B3AE0014180C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678B01AB3B3AE0014180C /* SecondViewController.swift */; };
@@ -15,6 +16,7 @@
 		18C678B91AB3B3AE0014180C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C678B71AB3B3AE0014180C /* LaunchScreen.xib */; };
 		18C678C51AB3B3AE0014180C /* CarO2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678C41AB3B3AE0014180C /* CarO2Tests.swift */; };
 		18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */; };
+		A3E1B8FFACB04272FF97A3EE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3FB5EE7BA35D56F9095215 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182DCBFA1AB3E79C002308FC /* CarO2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CarO2.jpg; sourceTree = "<group>"; };
+		186829A01AB3D81500F629A0 /* CarO2-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CarO2-Bridging-Header.h"; sourceTree = "<group>"; };
 		18C678A71AB3B3AE0014180C /* CarO2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarO2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C678AB1AB3B3AE0014180C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C678AC1AB3B3AE0014180C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +44,9 @@
 		18C678C31AB3B3AE0014180C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C678C41AB3B3AE0014180C /* CarO2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarO2Tests.swift; sourceTree = "<group>"; };
 		18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		943CFEADFDC3FA4F00DED592 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9A3FB5EE7BA35D56F9095215 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C51BC772400D17F8BBAFCB56 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E1B8FFACB04272FF97A3EE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +68,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02C57AFB3565CB72822261C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				943CFEADFDC3FA4F00DED592 /* Pods.debug.xcconfig */,
+				C51BC772400D17F8BBAFCB56 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		18C6789E1AB3B3AE0014180C = {
 			isa = PBXGroup;
 			children = (
 				18C678A91AB3B3AE0014180C /* CarO2 */,
 				18C678C11AB3B3AE0014180C /* CarO2Tests */,
 				18C678A81AB3B3AE0014180C /* Products */,
+				02C57AFB3565CB72822261C8 /* Pods */,
+				8C0DD72AFE4565D379107494 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +100,13 @@
 		18C678A91AB3B3AE0014180C /* CarO2 */ = {
 			isa = PBXGroup;
 			children = (
+				182DCBFA1AB3E79C002308FC /* CarO2.jpg */,
 				18C678AC1AB3B3AE0014180C /* AppDelegate.swift */,
 				18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */,
 				18C678AE1AB3B3AE0014180C /* FirstViewController.swift */,
 				18C678B01AB3B3AE0014180C /* SecondViewController.swift */,
 				18C678B21AB3B3AE0014180C /* Main.storyboard */,
+				186829A01AB3D81500F629A0 /* CarO2-Bridging-Header.h */,
 				18C678B51AB3B3AE0014180C /* Images.xcassets */,
 				18C678B71AB3B3AE0014180C /* LaunchScreen.xib */,
 				18C678AA1AB3B3AE0014180C /* Supporting Files */,
@@ -118,6 +139,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8C0DD72AFE4565D379107494 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A3FB5EE7BA35D56F9095215 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18C678C81AB3B3AE0014180C /* Build configuration list for PBXNativeTarget "CarO2" */;
 			buildPhases = (
+				D9DE2F197B8B18B1DD5DF47B /* Check Pods Manifest.lock */,
 				18C678A31AB3B3AE0014180C /* Sources */,
 				18C678A41AB3B3AE0014180C /* Frameworks */,
 				18C678A51AB3B3AE0014180C /* Resources */,
+				59BE7D70D064526746CC708B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,6 +232,7 @@
 				18C678B41AB3B3AE0014180C /* Main.storyboard in Resources */,
 				18C678B91AB3B3AE0014180C /* LaunchScreen.xib in Resources */,
 				18C678B61AB3B3AE0014180C /* Images.xcassets in Resources */,
+				182DCBFB1AB3E79C002308FC /* CarO2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +244,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59BE7D70D064526746CC708B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9DE2F197B8B18B1DD5DF47B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18C678A31AB3B3AE0014180C /* Sources */ = {
@@ -344,21 +409,25 @@
 		};
 		18C678C91AB3B3AE0014180C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 943CFEADFDC3FA4F00DED592 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CarO2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./CarO2/CarO2-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		18C678CA1AB3B3AE0014180C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C51BC772400D17F8BBAFCB56 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CarO2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./CarO2/CarO2-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -415,6 +484,7 @@
 				18C678CA1AB3B3AE0014180C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18C678CB1AB3B3AE0014180C /* Build configuration list for PBXNativeTarget "CarO2Tests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +493,7 @@
 				18C678CD1AB3B3AE0014180C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
