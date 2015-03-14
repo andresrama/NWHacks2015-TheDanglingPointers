@@ -10,15 +10,24 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
+    
+    let appId : String! = "APP ID"
+    let secretKey : String! = "SECRET KEY"
+    let redirectScheme : String! = "REDIRECT SCHEME"
+    
     var mojio : MojioClient?
+    
+    var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         var controller = window?.rootViewController as UITabBarController
         controller.selectedIndex = 1
+        
+        self.mojio = MojioClient.client() as? MojioClient
+        self.mojio?.initWithAppId(self.appId,
+            andSecretKey: self.secretKey, andRedirectUrlScheme: self.redirectScheme)
+        
         return true
     }
 
