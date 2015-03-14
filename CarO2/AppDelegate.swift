@@ -11,8 +11,9 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let appId : String! = "APP ID"
-    let secretKey : String! = "SECRET KEY"
+    let appId : String! = "638ca751-f202-4a30-9af9-570ad31eedee"
+    // I put the sandbox secret key
+    let secretKey : String! = "df7f983b-7309-4417-b2fd-fc47a03352b8"
     let redirectScheme : String! = "REDIRECT SCHEME"
     
     var mojio : MojioClient?
@@ -28,6 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.mojio?.initWithAppId(self.appId,
             andSecretKey: self.secretKey, andRedirectUrlScheme: self.redirectScheme)
         
+        if let mojio = self.mojio {
+            println("Mojio is initialized", mojio)
+        } else {
+            println("Mojio is None")
+        }
         return true
     }
 
