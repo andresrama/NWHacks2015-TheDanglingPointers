@@ -16,6 +16,7 @@
 		18C678B91AB3B3AE0014180C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C678B71AB3B3AE0014180C /* LaunchScreen.xib */; };
 		18C678C51AB3B3AE0014180C /* CarO2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678C41AB3B3AE0014180C /* CarO2Tests.swift */; };
 		18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */; };
+		517D5F631AB3F57F0005815A /* CarO2green.png in Resources */ = {isa = PBXBuildFile; fileRef = 517D5F621AB3F57F0005815A /* CarO2green.png */; };
 		A3E1B8FFACB04272FF97A3EE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3FB5EE7BA35D56F9095215 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		18C678C31AB3B3AE0014180C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C678C41AB3B3AE0014180C /* CarO2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarO2Tests.swift; sourceTree = "<group>"; };
 		18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		517D5F621AB3F57F0005815A /* CarO2green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CarO2green.png; sourceTree = "<group>"; };
 		943CFEADFDC3FA4F00DED592 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9A3FB5EE7BA35D56F9095215 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51BC772400D17F8BBAFCB56 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		18C678A91AB3B3AE0014180C /* CarO2 */ = {
 			isa = PBXGroup;
 			children = (
+				517D5F621AB3F57F0005815A /* CarO2green.png */,
 				18C678AC1AB3B3AE0014180C /* AppDelegate.swift */,
 				18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */,
 				18C678AE1AB3B3AE0014180C /* FirstViewController.swift */,
@@ -200,6 +203,7 @@
 				TargetAttributes = {
 					18C678A61AB3B3AE0014180C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 2S3D8J8M3T;
 					};
 					18C678BD1AB3B3AE0014180C = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -232,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C678B41AB3B3AE0014180C /* Main.storyboard in Resources */,
+				517D5F631AB3F57F0005815A /* CarO2green.png in Resources */,
 				18C678B91AB3B3AE0014180C /* LaunchScreen.xib in Resources */,
 				18C678B61AB3B3AE0014180C /* Images.xcassets in Resources */,
 			);
