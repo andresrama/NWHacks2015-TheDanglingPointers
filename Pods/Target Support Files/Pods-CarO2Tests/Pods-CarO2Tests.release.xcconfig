@@ -1,7 +1,7 @@
 ALWAYS_SEARCH_USER_PATHS = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CorePlot" "${PODS_ROOT}/Headers/Public/CorePlot/ios"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CorePlot" -isystem "${PODS_ROOT}/Headers/Public/CorePlot/ios"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-CarO2Tests-CorePlot" -framework "Accelerate" -framework "Foundation" -framework "QuartzCore" -framework "UIKit"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CorePlot" "${PODS_ROOT}/Headers/Public/CorePlot/ios" "${PODS_ROOT}/Headers/Public/JSONKit"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CorePlot" -isystem "${PODS_ROOT}/Headers/Public/CorePlot/ios" -isystem "${PODS_ROOT}/Headers/Public/JSONKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-CarO2Tests-CorePlot" -l"Pods-CarO2Tests-JSONKit" -framework "Accelerate" -framework "Foundation" -framework "QuartzCore" -framework "UIKit"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods
