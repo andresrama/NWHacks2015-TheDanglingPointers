@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182DCBFE1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 182DCBFD1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m */; };
 		18C678AD1AB3B3AE0014180C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678AC1AB3B3AE0014180C /* AppDelegate.swift */; };
 		18C678AF1AB3B3AE0014180C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678AE1AB3B3AE0014180C /* FirstViewController.swift */; };
 		18C678B11AB3B3AE0014180C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678B01AB3B3AE0014180C /* SecondViewController.swift */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182DCBFC1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPTMutablePlotRange+SwiftCompat.h"; sourceTree = "<group>"; };
+		182DCBFD1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CPTMutablePlotRange+SwiftCompat.m"; sourceTree = "<group>"; };
 		186829A01AB3D81500F629A0 /* CarO2-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CarO2-Bridging-Header.h"; sourceTree = "<group>"; };
 		18C678A71AB3B3AE0014180C /* CarO2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarO2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C678AB1AB3B3AE0014180C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 				18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */,
 				18C678AE1AB3B3AE0014180C /* FirstViewController.swift */,
 				18C678B01AB3B3AE0014180C /* SecondViewController.swift */,
+				182DCBFC1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.h */,
+				182DCBFD1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m */,
 				18C678B21AB3B3AE0014180C /* Main.storyboard */,
 				186829A01AB3D81500F629A0 /* CarO2-Bridging-Header.h */,
 				18C678B51AB3B3AE0014180C /* Images.xcassets */,
@@ -283,6 +288,7 @@
 				18C678AD1AB3B3AE0014180C /* AppDelegate.swift in Sources */,
 				18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */,
 				18C678AF1AB3B3AE0014180C /* FirstViewController.swift in Sources */,
+				182DCBFE1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

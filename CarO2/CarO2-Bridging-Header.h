@@ -8,3 +8,4 @@
 
 #import "CorePlot-CocoaTouch.h"
 
+#import "CPTMutablePlotRange+SwiftCompat.h"

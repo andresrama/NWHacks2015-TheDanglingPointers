@@ -22,6 +22,7 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
     
     func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex idx: UInt) -> NSNumber! {
         return idx+1
+        
     }
     //End
     
@@ -38,15 +39,24 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
         // hide the axes
         var axes = graph.axisSet as CPTXYAxisSet
         var lineStyle = CPTMutableLineStyle()
-        lineStyle.lineWidth = 0
+        lineStyle.lineColor = CPTColor(componentRed: 255, green: 0, blue: 0, alpha: 50)
+        lineStyle.lineWidth = 1
         axes.xAxis.axisLineStyle = lineStyle
         axes.yAxis.axisLineStyle = lineStyle
         
-        // add a pie plot
-        var pie = CPTPieChart(frame: self.view.frame)
-        pie.dataSource = self
-        pie.pieRadius = (self.view.frame.size.width * 0.9)/2
-        graph.addPlot(pie)
+        var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
+        var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
+        var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
+        xRange.setLengthFloat(10)
+        yRange.setLengthFloat(10)
+        plotSpace.xRange = xRange
+        plotSpace.yRange = yRange
+        
+        // add the plot
+        var line = CPTScatterPlot(frame: view.frame)
+        line.dataSource = self
+        line.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0.01])
+        graph.addPlot(line)
         
         self.graphView.hostedGraph = graph
     }
