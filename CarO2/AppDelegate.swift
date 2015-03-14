@@ -26,10 +26,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         controller.selectedIndex = 1
         
         self.mojio = MojioClient.client() as? MojioClient
-        self.mojio?.initWithAppId(self.appId,
-            andSecretKey: self.secretKey, andRedirectUrlScheme: self.redirectScheme)
         
         if let mojio = self.mojio {
+            mojio.initWithAppId(self.appId,
+                andSecretKey: self.secretKey, andRedirectUrlScheme: self.redirectScheme)
+            
+            /*
+
+            NSDictionary *queryOptions = @{@"limit" : @1, @"offset" : @0, @"sortBy" : @"LastContactTime", @"desc" : @"true"};
+            [self.client getEntityWithPath:@"Vehicles" withQueryOptions:queryOptions success:^(id responseObject) {
+            // executed when the data is successfully fetched
+            }failure: ^{
+            // executed if there was an error in trying to retrieve data
+            }];
+            
+            */
+            var queryOptions = [
+                "limit": 1,
+                "offset": 0,
+                "sortBy": "LastContactTime",
+                "desc": "true"
+            ]
+            mojio.getEntityWithPath("Vehicles", withQueryOptions: queryOptions, success: {
+                (obj: AnyObject!) in
+                println(obj)
+            }, failure: {
+                (err: NSError!) in
+                println(err)
+            })
+            
+            mojio.loginWithCompletionBlock {
+                println("Logged in!")
+            }
+            
             println("Mojio is initialized", mojio)
         } else {
             println("Mojio is None")
@@ -37,6 +66,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func handleOpenURL(url: NSURL) -> ObjCBool {
+        self.mojio?.handleOpenURL(url)
+        println("handleOpenURL(\(url))")
+        return true
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
