@@ -13,13 +13,16 @@ func createSession() -> NSURLSession {
     return sess
 }
 
-func fetch(session: NSURLSession, url: NSString) {
+func fetch(session: NSURLSession, url: NSString) -> NSString {
     let nsurl = NSURL(string: url)!
+    var str: NSString = ""
     let task = session.dataTaskWithURL(nsurl) {(data, resp, err) in
-
- 
+        str = NSString(data: data, encoding: NSUTF8StringEncoding)!
+        println(str)
     }
     task.resume()
+    println(str)
+    return str
 }
 
 func parseJSON(inputData: NSData) -> NSDictionary {
