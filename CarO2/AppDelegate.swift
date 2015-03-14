@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let appId : String! = "638ca751-f202-4a30-9af9-570ad31eedee"
     // I put the sandbox secret key
     let secretKey : String! = "df7f983b-7309-4417-b2fd-fc47a03352b8"
-    let redirectScheme : String! = "REDIRECT SCHEME"
+    let redirectScheme : String! = "caro2-ios://"
     
     var mojio : MojioClient?
     
