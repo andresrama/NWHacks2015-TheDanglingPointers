@@ -14,6 +14,7 @@
 		18C678B61AB3B3AE0014180C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C678B51AB3B3AE0014180C /* Images.xcassets */; };
 		18C678B91AB3B3AE0014180C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C678B71AB3B3AE0014180C /* LaunchScreen.xib */; };
 		18C678C51AB3B3AE0014180C /* CarO2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678C41AB3B3AE0014180C /* CarO2Tests.swift */; };
+		18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		18C678BE1AB3B3AE0014180C /* CarO2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarO2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C678C31AB3B3AE0014180C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C678C41AB3B3AE0014180C /* CarO2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarO2Tests.swift; sourceTree = "<group>"; };
+		18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				18C678AC1AB3B3AE0014180C /* AppDelegate.swift */,
+				18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */,
 				18C678AE1AB3B3AE0014180C /* FirstViewController.swift */,
 				18C678B01AB3B3AE0014180C /* SecondViewController.swift */,
 				18C678B21AB3B3AE0014180C /* Main.storyboard */,
@@ -217,6 +220,7 @@
 			files = (
 				18C678B11AB3B3AE0014180C /* SecondViewController.swift in Sources */,
 				18C678AD1AB3B3AE0014180C /* AppDelegate.swift in Sources */,
+				18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */,
 				18C678AF1AB3B3AE0014180C /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
