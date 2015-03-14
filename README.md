@@ -4,7 +4,7 @@ The Dangling Pointer's GitHhub
 # Setup
 
 ```
-pod init
+pod update
 git submodule update --init --recursive
 cd mojio-ios-sdk/MojioSDKiOS/
 pod update
