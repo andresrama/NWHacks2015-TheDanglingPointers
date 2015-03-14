@@ -15,7 +15,7 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
     
     // Funcs to make the CPTPlotDataSource attribute true - Start
     func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
-        return 100
+        return 25
     }
     
     var isUpdating = false
@@ -40,7 +40,7 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
     
     //var gPreviousPlot : CPTScatterPlot?
     
-    func plotGraph(graph : CPTXYGraph, dataSource : CPTPlotDataSource, tittle : String, lineColor : CPTColor, lineWidth : Float, xRangeLegnth : Float, yRangeLegnth : Float, paddingLeft : Int, paddingRight : Int, paddingTop : Int, paddingBottom : Int, backgroundColor : CGColor, previousPlot : CPTPlot?){
+    func plotGraph(graph : CPTXYGraph, dataSource : CPTPlotDataSource, tittle : String, xLineColor : CPTColor, xLineWidth : Float, yLineColor : CPTColor, yLineWidth : Float, xRangeLegnth : Float, yRangeLegnth : Float, paddingLeft : Int, paddingRight : Int, paddingTop : Int, paddingBottom : Int, backgroundColor : CGColor, previousPlot : CPTPlot?){
         graph.title = title
         graph.paddingLeft = CGFloat(paddingLeft)
         graph.paddingRight = CGFloat(paddingLeft)
@@ -50,12 +50,17 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
         //Axes Line Style
         var axes = graph.axisSet as CPTXYAxisSet
         
-        var lineStyle = CPTMutableLineStyle()
-        lineStyle.lineColor = lineColor
-        lineStyle.lineWidth = CGFloat(lineWidth)
+        var xLineStyle = CPTMutableLineStyle()
+        xLineStyle.lineColor = xLineColor
+        xLineStyle.lineWidth = CGFloat(xLineWidth)
         
-        axes.xAxis.axisLineStyle = lineStyle
-        axes.yAxis.axisLineStyle = lineStyle
+        
+        var yLineStyle = CPTMutableLineStyle()
+        yLineStyle.lineColor = yLineColor
+        yLineStyle.lineWidth = CGFloat(yLineWidth)
+        
+        axes.xAxis.axisLineStyle = xLineStyle
+        axes.yAxis.axisLineStyle = yLineStyle
         
         //Axes properties
         var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
@@ -77,6 +82,8 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
         println(line.shadowMargin)
         
         
+        
+        
         //Finalize
         graph.addPlot(line)
         self.graphView.hostedGraph = graph
@@ -91,9 +98,11 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
         plotGraph(currentPlot,
             dataSource: self,
             tittle: "Function Plotted Line Graph",
-            lineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
-            lineWidth: 1,
-            xRangeLegnth: 100,
+            xLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
+            xLineWidth: 1,
+            yLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
+            yLineWidth: 0,
+            xRangeLegnth: 25,
             yRangeLegnth: 30,
             paddingLeft: 0,
             paddingRight: 0,
@@ -122,7 +131,6 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
         
         
     }
-    
-
+  
 }
 
