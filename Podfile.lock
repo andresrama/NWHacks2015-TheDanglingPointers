@@ -1,0 +1,19 @@
+PODS:
+  - CorePlot (99.99.99)
+
+DEPENDENCIES:
+  - CorePlot (from `https://github.com/IngmarStein/core-plot.git`)
+
+EXTERNAL SOURCES:
+  CorePlot:
+    :git: https://github.com/IngmarStein/core-plot.git
+
+CHECKOUT OPTIONS:
+  CorePlot:
+    :commit: 3413d8b7fa382921a918e7801a22e614a17b8bbf
+    :git: https://github.com/IngmarStein/core-plot.git
+
+SPEC CHECKSUMS:
+  CorePlot: 80c046fdb3f9f44c73a5ca5887c54ded52510105
+
+COCOAPODS: 0.36.0
