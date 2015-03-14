@@ -10,6 +10,6 @@
 
 #import "CPTMutablePlotRange+SwiftCompat.h"
 
-#import "../MojioSDK/MojioSDKiOS.h"
+#import "MojioSDKiOS.h"
 
-#import "../MojioSDK/MojioClient.h"
+#import "MojioClient.h"
