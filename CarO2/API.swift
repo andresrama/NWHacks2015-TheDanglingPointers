@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+func createSession() -> NSURLSession {
+    let sess = NSURLSession.sharedSession()
+    return sess
+}
+
+func fetch(session: NSURLSession, url: NSString) {
+    let nsurl = NSURL(string: url)!
+    let task = session.dataTaskWithURL(nsurl) {(data, resp, err) in
+
+ 
+    }
+    task.resume()
+}
+
+func parseJSON(inputData: NSData) -> NSDictionary {
+    var error: NSError?
+    var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
+
+    return boardsDictionary
+}

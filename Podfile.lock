@@ -1,10 +1,8 @@
 PODS:
   - CorePlot (99.99.99)
-  - JSONKit (1.5pre)
 
 DEPENDENCIES:
   - CorePlot (from `https://github.com/IngmarStein/core-plot.git`)
-  - JSONKit (= 1.5pre)
 
 EXTERNAL SOURCES:
   CorePlot:
@@ -17,6 +15,5 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CorePlot: 80c046fdb3f9f44c73a5ca5887c54ded52510105
-  JSONKit: efef3bbd3372ff33f96b9c6f34cf4fe18e74ab69
 
 COCOAPODS: 0.36.0
