@@ -18,6 +18,26 @@
 		18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */; };
 		517D5F671AB401BC0005815A /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D5F661AB401BC0005815A /* TabViewController.swift */; };
 		782574041AB4ADB200DB548B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782574031AB4ADB200DB548B /* API.swift */; };
+		78B884871AB4D47700338FD1 /* MojioClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884851AB4D47700338FD1 /* MojioClient.m */; };
+		78B884AF1AB4D4FE00338FD1 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8848A1AB4D4FE00338FD1 /* Address.m */; };
+		78B884B01AB4D4FE00338FD1 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8848C1AB4D4FE00338FD1 /* App.m */; };
+		78B884B11AB4D4FE00338FD1 /* AuthenticationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8848E1AB4D4FE00338FD1 /* AuthenticationProvider.m */; };
+		78B884B21AB4D4FE00338FD1 /* CarState.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884901AB4D4FE00338FD1 /* CarState.m */; };
+		78B884B31AB4D4FE00338FD1 /* DiagnosticCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884921AB4D4FE00338FD1 /* DiagnosticCodes.m */; };
+		78B884B41AB4D4FE00338FD1 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884941AB4D4FE00338FD1 /* Entity.m */; };
+		78B884B51AB4D4FE00338FD1 /* EventBroadcast.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884961AB4D4FE00338FD1 /* EventBroadcast.m */; };
+		78B884B61AB4D4FE00338FD1 /* ImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884981AB4D4FE00338FD1 /* ImageSize.m */; };
+		78B884B71AB4D4FE00338FD1 /* Invoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8849A1AB4D4FE00338FD1 /* Invoice.m */; };
+		78B884B81AB4D4FE00338FD1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8849C1AB4D4FE00338FD1 /* Location.m */; };
+		78B884B91AB4D4FE00338FD1 /* Mojio.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8849E1AB4D4FE00338FD1 /* Mojio.m */; };
+		78B884BA1AB4D4FE00338FD1 /* MojioResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884A01AB4D4FE00338FD1 /* MojioResponse.m */; };
+		78B884BB1AB4D4FE00338FD1 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884A21AB4D4FE00338FD1 /* Product.m */; };
+		78B884BC1AB4D4FE00338FD1 /* Register.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884A41AB4D4FE00338FD1 /* Register.m */; };
+		78B884BD1AB4D4FE00338FD1 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884A61AB4D4FE00338FD1 /* Storage.m */; };
+		78B884BE1AB4D4FE00338FD1 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884A81AB4D4FE00338FD1 /* Token.m */; };
+		78B884BF1AB4D4FE00338FD1 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884AA1AB4D4FE00338FD1 /* Trip.m */; };
+		78B884C01AB4D4FE00338FD1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884AC1AB4D4FE00338FD1 /* User.m */; };
+		78B884C11AB4D4FE00338FD1 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884AE1AB4D4FE00338FD1 /* Vehicle.m */; };
 		A3E1B8FFACB04272FF97A3EE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3FB5EE7BA35D56F9095215 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +69,47 @@
 		18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		517D5F661AB401BC0005815A /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		782574031AB4ADB200DB548B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		78B884841AB4D47700338FD1 /* MojioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MojioClient.h; sourceTree = "<group>"; };
+		78B884851AB4D47700338FD1 /* MojioClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MojioClient.m; sourceTree = "<group>"; };
+		78B884861AB4D47700338FD1 /* MojioSDKiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MojioSDKiOS.h; sourceTree = "<group>"; };
+		78B884891AB4D4FE00338FD1 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		78B8848A1AB4D4FE00338FD1 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		78B8848B1AB4D4FE00338FD1 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		78B8848C1AB4D4FE00338FD1 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
+		78B8848D1AB4D4FE00338FD1 /* AuthenticationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationProvider.h; sourceTree = "<group>"; };
+		78B8848E1AB4D4FE00338FD1 /* AuthenticationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationProvider.m; sourceTree = "<group>"; };
+		78B8848F1AB4D4FE00338FD1 /* CarState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarState.h; sourceTree = "<group>"; };
+		78B884901AB4D4FE00338FD1 /* CarState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarState.m; sourceTree = "<group>"; };
+		78B884911AB4D4FE00338FD1 /* DiagnosticCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticCodes.h; sourceTree = "<group>"; };
+		78B884921AB4D4FE00338FD1 /* DiagnosticCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticCodes.m; sourceTree = "<group>"; };
+		78B884931AB4D4FE00338FD1 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		78B884941AB4D4FE00338FD1 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
+		78B884951AB4D4FE00338FD1 /* EventBroadcast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBroadcast.h; sourceTree = "<group>"; };
+		78B884961AB4D4FE00338FD1 /* EventBroadcast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventBroadcast.m; sourceTree = "<group>"; };
+		78B884971AB4D4FE00338FD1 /* ImageSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSize.h; sourceTree = "<group>"; };
+		78B884981AB4D4FE00338FD1 /* ImageSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSize.m; sourceTree = "<group>"; };
+		78B884991AB4D4FE00338FD1 /* Invoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invoice.h; sourceTree = "<group>"; };
+		78B8849A1AB4D4FE00338FD1 /* Invoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invoice.m; sourceTree = "<group>"; };
+		78B8849B1AB4D4FE00338FD1 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		78B8849C1AB4D4FE00338FD1 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		78B8849D1AB4D4FE00338FD1 /* Mojio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mojio.h; sourceTree = "<group>"; };
+		78B8849E1AB4D4FE00338FD1 /* Mojio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mojio.m; sourceTree = "<group>"; };
+		78B8849F1AB4D4FE00338FD1 /* MojioResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MojioResponse.h; sourceTree = "<group>"; };
+		78B884A01AB4D4FE00338FD1 /* MojioResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MojioResponse.m; sourceTree = "<group>"; };
+		78B884A11AB4D4FE00338FD1 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		78B884A21AB4D4FE00338FD1 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		78B884A31AB4D4FE00338FD1 /* Register.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Register.h; sourceTree = "<group>"; };
+		78B884A41AB4D4FE00338FD1 /* Register.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Register.m; sourceTree = "<group>"; };
+		78B884A51AB4D4FE00338FD1 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
+		78B884A61AB4D4FE00338FD1 /* Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storage.m; sourceTree = "<group>"; };
+		78B884A71AB4D4FE00338FD1 /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
+		78B884A81AB4D4FE00338FD1 /* Token.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Token.m; sourceTree = "<group>"; };
+		78B884A91AB4D4FE00338FD1 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		78B884AA1AB4D4FE00338FD1 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		78B884AB1AB4D4FE00338FD1 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		78B884AC1AB4D4FE00338FD1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		78B884AD1AB4D4FE00338FD1 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
+		78B884AE1AB4D4FE00338FD1 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
 		943CFEADFDC3FA4F00DED592 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9A3FB5EE7BA35D56F9095215 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51BC772400D17F8BBAFCB56 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +146,10 @@
 		18C6789E1AB3B3AE0014180C = {
 			isa = PBXGroup;
 			children = (
+				78B884881AB4D4FE00338FD1 /* Models */,
+				78B884841AB4D47700338FD1 /* MojioClient.h */,
+				78B884851AB4D47700338FD1 /* MojioClient.m */,
+				78B884861AB4D47700338FD1 /* MojioSDKiOS.h */,
 				18C678A91AB3B3AE0014180C /* CarO2 */,
 				18C678C11AB3B3AE0014180C /* CarO2Tests */,
 				18C678A81AB3B3AE0014180C /* Products */,
@@ -145,6 +210,51 @@
 				18C678C31AB3B3AE0014180C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78B884881AB4D4FE00338FD1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78B884891AB4D4FE00338FD1 /* Address.h */,
+				78B8848A1AB4D4FE00338FD1 /* Address.m */,
+				78B8848B1AB4D4FE00338FD1 /* App.h */,
+				78B8848C1AB4D4FE00338FD1 /* App.m */,
+				78B8848D1AB4D4FE00338FD1 /* AuthenticationProvider.h */,
+				78B8848E1AB4D4FE00338FD1 /* AuthenticationProvider.m */,
+				78B8848F1AB4D4FE00338FD1 /* CarState.h */,
+				78B884901AB4D4FE00338FD1 /* CarState.m */,
+				78B884911AB4D4FE00338FD1 /* DiagnosticCodes.h */,
+				78B884921AB4D4FE00338FD1 /* DiagnosticCodes.m */,
+				78B884931AB4D4FE00338FD1 /* Entity.h */,
+				78B884941AB4D4FE00338FD1 /* Entity.m */,
+				78B884951AB4D4FE00338FD1 /* EventBroadcast.h */,
+				78B884961AB4D4FE00338FD1 /* EventBroadcast.m */,
+				78B884971AB4D4FE00338FD1 /* ImageSize.h */,
+				78B884981AB4D4FE00338FD1 /* ImageSize.m */,
+				78B884991AB4D4FE00338FD1 /* Invoice.h */,
+				78B8849A1AB4D4FE00338FD1 /* Invoice.m */,
+				78B8849B1AB4D4FE00338FD1 /* Location.h */,
+				78B8849C1AB4D4FE00338FD1 /* Location.m */,
+				78B8849D1AB4D4FE00338FD1 /* Mojio.h */,
+				78B8849E1AB4D4FE00338FD1 /* Mojio.m */,
+				78B8849F1AB4D4FE00338FD1 /* MojioResponse.h */,
+				78B884A01AB4D4FE00338FD1 /* MojioResponse.m */,
+				78B884A11AB4D4FE00338FD1 /* Product.h */,
+				78B884A21AB4D4FE00338FD1 /* Product.m */,
+				78B884A31AB4D4FE00338FD1 /* Register.h */,
+				78B884A41AB4D4FE00338FD1 /* Register.m */,
+				78B884A51AB4D4FE00338FD1 /* Storage.h */,
+				78B884A61AB4D4FE00338FD1 /* Storage.m */,
+				78B884A71AB4D4FE00338FD1 /* Token.h */,
+				78B884A81AB4D4FE00338FD1 /* Token.m */,
+				78B884A91AB4D4FE00338FD1 /* Trip.h */,
+				78B884AA1AB4D4FE00338FD1 /* Trip.m */,
+				78B884AB1AB4D4FE00338FD1 /* User.h */,
+				78B884AC1AB4D4FE00338FD1 /* User.m */,
+				78B884AD1AB4D4FE00338FD1 /* Vehicle.h */,
+				78B884AE1AB4D4FE00338FD1 /* Vehicle.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8C0DD72AFE4565D379107494 /* Frameworks */ = {
@@ -291,13 +401,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B884C01AB4D4FE00338FD1 /* User.m in Sources */,
+				78B884BB1AB4D4FE00338FD1 /* Product.m in Sources */,
+				78B884C11AB4D4FE00338FD1 /* Vehicle.m in Sources */,
+				78B884B41AB4D4FE00338FD1 /* Entity.m in Sources */,
+				78B884AF1AB4D4FE00338FD1 /* Address.m in Sources */,
+				78B884BE1AB4D4FE00338FD1 /* Token.m in Sources */,
 				517D5F671AB401BC0005815A /* TabViewController.swift in Sources */,
 				18C678B11AB3B3AE0014180C /* SecondViewController.swift in Sources */,
+				78B884B81AB4D4FE00338FD1 /* Location.m in Sources */,
+				78B884B61AB4D4FE00338FD1 /* ImageSize.m in Sources */,
+				78B884B11AB4D4FE00338FD1 /* AuthenticationProvider.m in Sources */,
+				78B884B71AB4D4FE00338FD1 /* Invoice.m in Sources */,
 				18C678AD1AB3B3AE0014180C /* AppDelegate.swift in Sources */,
 				18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */,
+				78B884B01AB4D4FE00338FD1 /* App.m in Sources */,
 				18C678AF1AB3B3AE0014180C /* FirstViewController.swift in Sources */,
+				78B884B21AB4D4FE00338FD1 /* CarState.m in Sources */,
+				78B884BF1AB4D4FE00338FD1 /* Trip.m in Sources */,
+				78B884BD1AB4D4FE00338FD1 /* Storage.m in Sources */,
+				78B884B31AB4D4FE00338FD1 /* DiagnosticCodes.m in Sources */,
+				78B884871AB4D47700338FD1 /* MojioClient.m in Sources */,
+				78B884BC1AB4D4FE00338FD1 /* Register.m in Sources */,
+				78B884B91AB4D4FE00338FD1 /* Mojio.m in Sources */,
+				78B884B51AB4D4FE00338FD1 /* EventBroadcast.m in Sources */,
 				182DCBFE1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m in Sources */,
 				782574041AB4ADB200DB548B /* API.swift in Sources */,
+				78B884BA1AB4D4FE00338FD1 /* MojioResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
