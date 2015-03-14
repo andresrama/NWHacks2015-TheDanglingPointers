@@ -10,33 +10,51 @@ import UIKit
 
 class SecondViewController: UIViewController, CPTPlotDataSource {
     
-    
     //Graph item outlet
     @IBOutlet weak var graphView: CPTGraphHostingView!
+    
+    var maxPlotHeight : Int = 40
+    var trololol : Int = 0
     
     
     // Funcs to make the CPTPlotDataSource attribute true - Start
     func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
-        return 4
+        return 100
     }
     
     func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex idx: UInt) -> NSNumber! {
-        return idx+1
-        
+        var rand = Int(arc4random_uniform(26))
+        switch(fieldEnum){
+        case 0:
+            return idx
+        case 1:
+            if( rand > maxPlotHeight ){
+                maxPlotHeight = rand
+                println(":\(rand)")
+            }
+            return rand
+        default:
+            return 0
+            
+        }
     }
     //End
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         // create graph
         var graph = CPTXYGraph(frame: CGRectZero)
-        graph.title = "Hello Graph"
+        
+        //Tittle
+        graph.title = "Line Graph"
+        
+        //Padding
         graph.paddingLeft = 0
         graph.paddingTop = 0
         graph.paddingRight = 0
         graph.paddingBottom = 0
-        // hide the axes
+        
+        //Axes set up...
         var axes = graph.axisSet as CPTXYAxisSet
         var lineStyle = CPTMutableLineStyle()
         lineStyle.lineColor = CPTColor(componentRed: 255, green: 0, blue: 0, alpha: 50)
@@ -47,15 +65,18 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
         var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
         var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
         var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
-        xRange.setLengthFloat(10)
-        yRange.setLengthFloat(10)
-        plotSpace.xRange = xRange
-        plotSpace.yRange = yRange
+        xRange.setLengthFloat(100)
         
-        // add the plot
         var line = CPTScatterPlot(frame: view.frame)
         line.dataSource = self
         line.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0.01])
+        let maxFloat = Float(maxPlotHeight)
+        println("-------------------------------HEIGHT: \(maxFloat)")
+        yRange.setLengthFloat(maxFloat)
+        
+        plotSpace.xRange = xRange
+        plotSpace.yRange = yRange
+        
         graph.addPlot(line)
         
         self.graphView.hostedGraph = graph
