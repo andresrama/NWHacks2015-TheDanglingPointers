@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "Token.h"
+#import "Models/Token.h"
 
 /**
  'MojioClient' is the main class of Mojio SDK.

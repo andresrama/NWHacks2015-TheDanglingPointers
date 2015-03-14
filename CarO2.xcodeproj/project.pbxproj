@@ -53,7 +53,7 @@
 /* Begin PBXFileReference section */
 		182DCBFC1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPTMutablePlotRange+SwiftCompat.h"; sourceTree = "<group>"; };
 		182DCBFD1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CPTMutablePlotRange+SwiftCompat.m"; sourceTree = "<group>"; };
-		186829A01AB3D81500F629A0 /* CarO2-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CarO2-Bridging-Header.h"; sourceTree = "<group>"; };
+		186829A01AB3D81500F629A0 /* CarO2-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CarO2-Bridging-Header.h"; path = "CarO2/CarO2-Bridging-Header.h"; sourceTree = "<group>"; };
 		18C678A71AB3B3AE0014180C /* CarO2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarO2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C678AB1AB3B3AE0014180C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C678AC1AB3B3AE0014180C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,9 +105,9 @@
 		78B884AC1AB4D4FE00338FD1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		78B884AD1AB4D4FE00338FD1 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
 		78B884AE1AB4D4FE00338FD1 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
-		78B884C41AB4DAB800338FD1 /* MojioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MojioClient.h; sourceTree = "<group>"; };
-		78B884C51AB4DAB800338FD1 /* MojioClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MojioClient.m; sourceTree = "<group>"; };
-		78B884C61AB4DAB800338FD1 /* MojioSDKiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MojioSDKiOS.h; sourceTree = "<group>"; };
+		78B884C41AB4DAB800338FD1 /* MojioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MojioClient.h; path = MojioSDK/MojioClient.h; sourceTree = "<group>"; };
+		78B884C51AB4DAB800338FD1 /* MojioClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MojioClient.m; path = MojioSDK/MojioClient.m; sourceTree = "<group>"; };
+		78B884C61AB4DAB800338FD1 /* MojioSDKiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MojioSDKiOS.h; path = MojioSDK/MojioSDKiOS.h; sourceTree = "<group>"; };
 		943CFEADFDC3FA4F00DED592 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9A3FB5EE7BA35D56F9095215 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51BC772400D17F8BBAFCB56 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,7 +144,11 @@
 		18C6789E1AB3B3AE0014180C = {
 			isa = PBXGroup;
 			children = (
-				78B884C31AB4DAB800338FD1 /* MojioSDK */,
+				186829A01AB3D81500F629A0 /* CarO2-Bridging-Header.h */,
+				78B884C41AB4DAB800338FD1 /* MojioClient.h */,
+				78B884C51AB4DAB800338FD1 /* MojioClient.m */,
+				78B884C61AB4DAB800338FD1 /* MojioSDKiOS.h */,
+				78B884881AB4D4FE00338FD1 /* Models */,
 				18C678A91AB3B3AE0014180C /* CarO2 */,
 				18C678C11AB3B3AE0014180C /* CarO2Tests */,
 				18C678A81AB3B3AE0014180C /* Products */,
@@ -173,7 +177,6 @@
 				182DCBFC1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.h */,
 				182DCBFD1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m */,
 				18C678B21AB3B3AE0014180C /* Main.storyboard */,
-				186829A01AB3D81500F629A0 /* CarO2-Bridging-Header.h */,
 				18C678B51AB3B3AE0014180C /* Images.xcassets */,
 				18C678B71AB3B3AE0014180C /* LaunchScreen.xib */,
 				18C678AA1AB3B3AE0014180C /* Supporting Files */,
@@ -248,19 +251,7 @@
 				78B884AD1AB4D4FE00338FD1 /* Vehicle.h */,
 				78B884AE1AB4D4FE00338FD1 /* Vehicle.m */,
 			);
-			name = Models;
-			path = ../Models;
-			sourceTree = "<group>";
-		};
-		78B884C31AB4DAB800338FD1 /* MojioSDK */ = {
-			isa = PBXGroup;
-			children = (
-				78B884881AB4D4FE00338FD1 /* Models */,
-				78B884C41AB4DAB800338FD1 /* MojioClient.h */,
-				78B884C51AB4DAB800338FD1 /* MojioClient.m */,
-				78B884C61AB4DAB800338FD1 /* MojioSDKiOS.h */,
-			);
-			path = MojioSDK;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8C0DD72AFE4565D379107494 /* Frameworks */ = {

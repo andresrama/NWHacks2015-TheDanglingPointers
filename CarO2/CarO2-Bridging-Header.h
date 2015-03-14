@@ -9,3 +9,7 @@
 #import "CorePlot-CocoaTouch.h"
 
 #import "CPTMutablePlotRange+SwiftCompat.h"
+
+#import "../MojioSDK/MojioSDKiOS.h"
+
+#import "../MojioSDK/MojioClient.h"
