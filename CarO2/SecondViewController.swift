@@ -13,16 +13,19 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
     //Graph item outlet
     @IBOutlet weak var graphView: CPTGraphHostingView!
     
-    //Graph item thing
-    
-    
     // Funcs to make the CPTPlotDataSource attribute true - Start
     func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
-        return 100
+        return 25
     }
+    
+    var isUpdating = false
     
     func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex idx: UInt) -> NSNumber! {
         var rand = Int(arc4random_uniform(26))
+        var mult = 1
+        if(isUpdating){
+            mult = 2
+        }
         switch(fieldEnum){
         case 0:
             return idx
@@ -35,45 +38,78 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
     }
     //End
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // create graph
-        var graph = CPTXYGraph(frame: CGRectZero)
+    //var gPreviousPlot : CPTScatterPlot?
+    
+    func plotGraph(graph : CPTXYGraph, dataSource : CPTPlotDataSource, tittle : String, xLineColor : CPTColor, xLineWidth : Float, yLineColor : CPTColor, yLineWidth : Float, xRangeLegnth : Float, yRangeLegnth : Float, paddingLeft : Int, paddingRight : Int, paddingTop : Int, paddingBottom : Int, backgroundColor : CGColor, previousPlot : CPTPlot?){
+        graph.title = title
+        graph.paddingLeft = CGFloat(paddingLeft)
+        graph.paddingRight = CGFloat(paddingLeft)
+        graph.paddingTop = CGFloat(paddingLeft)
+        graph.paddingBottom = CGFloat(paddingLeft)
         
-        //Tittle
-        graph.title = "Line Graph"
-        
-        //Padding
-        graph.paddingLeft = 0
-        graph.paddingTop = 0
-        graph.paddingRight = 0
-        graph.paddingBottom = 0
-        
-        //Axes set up...
+        //Axes Line Style
         var axes = graph.axisSet as CPTXYAxisSet
-        var lineStyle = CPTMutableLineStyle()
-        lineStyle.lineColor = CPTColor(componentRed: 255, green: 0, blue: 0, alpha: 50)
-        lineStyle.lineWidth = 1
-        axes.xAxis.axisLineStyle = lineStyle
-        axes.yAxis.axisLineStyle = lineStyle
         
-        //Plot space/range set up...
+        var xLineStyle = CPTMutableLineStyle()
+        xLineStyle.lineColor = xLineColor
+        xLineStyle.lineWidth = CGFloat(xLineWidth)
+        
+        
+        var yLineStyle = CPTMutableLineStyle()
+        yLineStyle.lineColor = yLineColor
+        yLineStyle.lineWidth = CGFloat(yLineWidth)
+        
+        axes.xAxis.axisLineStyle = xLineStyle
+        axes.yAxis.axisLineStyle = yLineStyle
+        
+        //Axes properties
         var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
         var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
         var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
-        xRange.setLengthFloat(100)
-        yRange.setLengthFloat(40)
+        xRange.setLengthFloat(xRangeLegnth)
+        yRange.setLengthFloat(yRangeLegnth)
         
         plotSpace.xRange = xRange
         plotSpace.yRange = yRange
         
+        //Line settings
         var line = CPTScatterPlot(frame: view.frame)
-        line.dataSource = self
-        line.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0.01])
+        line.dataSource = dataSource
+        line.backgroundColor = backgroundColor
+        line.shadowColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 255, 255])
         
+        line.shadowOpacity = 0.3;
+        println(line.shadowMargin)
+        
+        
+        
+        
+        //Finalize
         graph.addPlot(line)
-        
         self.graphView.hostedGraph = graph
+    }
+
+    //Graph item thing
+    var currentPlot = CPTXYGraph(frame: CGRectZero)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        plotGraph(currentPlot,
+            dataSource: self,
+            tittle: "Function Plotted Line Graph",
+            xLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
+            xLineWidth: 1,
+            yLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
+            yLineWidth: 0,
+            xRangeLegnth: 25,
+            yRangeLegnth: 30,
+            paddingLeft: 0,
+            paddingRight: 0,
+            paddingTop: 0,
+            paddingBottom: 0,
+            backgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0.0]),
+            previousPlot: nil)
     }
     
     
@@ -84,8 +120,17 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
     }
     
     @IBAction func TestButton(sender: AnyObject) {
+        isUpdating = !isUpdating
+        var color : CGColor
+        if(isUpdating){
+            color = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 255, 0, 0.01])
+        }else{
+            color = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 255, 0.01])
+        }
+        currentPlot.reloadData()
+        
+        
     }
-    
-
+  
 }
 
