@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Fuel-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="CarO2" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,7 +39,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Fuel" image="fuel" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="764" y="0.0"/>
         </scene>
-        <!--Item-->
+        <!--CO2-->
         <scene sceneID="Hsz-RE-1GP">
             <objects>
                 <viewController storyboardIdentifier="Third View" id="tPK-ve-VBn" customClass="ThirdViewController" customModule="CarO2" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,7 +136,7 @@
                             <constraint firstItem="Oys-Kv-hSk" firstAttribute="centerY" secondItem="di4-f8-z7l" secondAttribute="centerY" id="bVh-hT-ZKz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="9CM-NW-u88"/>
+                    <tabBarItem key="tabBarItem" title="CO2" image="cloud" id="9CM-NW-u88"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b8-oB-KVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,7 +165,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="cloud" width="50" height="50"/>
+        <image name="fuel" width="50" height="50"/>
         <image name="home" width="25" height="25"/>
     </resources>
 </document>
