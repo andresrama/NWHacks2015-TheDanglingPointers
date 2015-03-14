@@ -98,7 +98,7 @@
                             <constraint firstItem="Rsd-Nv-mb9" firstAttribute="top" secondItem="PV0-SW-sZW" secondAttribute="bottom" constant="8" symbolic="YES" id="sik-NQ-efQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="rsz_home" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="graphView" destination="PV0-SW-sZW" id="qoh-4k-Xbs"/>
                     </connections>
@@ -166,6 +166,6 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="rsz_home" width="25" height="25"/>
+        <image name="home" width="25" height="25"/>
     </resources>
 </document>
