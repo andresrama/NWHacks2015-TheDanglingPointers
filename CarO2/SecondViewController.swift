@@ -78,7 +78,7 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
         line.backgroundColor = backgroundColor
         line.shadowColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 255, 255])
         
-        line.shadowOpacity = 1.0;
+        line.shadowOpacity = 0.3;
         println(line.shadowMargin)
         
         
