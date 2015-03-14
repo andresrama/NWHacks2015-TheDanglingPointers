@@ -13,8 +13,7 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
     //Graph item outlet
     @IBOutlet weak var graphView: CPTGraphHostingView!
     
-    var maxPlotHeight : Int = 40
-    var trololol : Int = 0
+    //Graph item thing
     
     
     // Funcs to make the CPTPlotDataSource attribute true - Start
@@ -28,10 +27,6 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
         case 0:
             return idx
         case 1:
-            if( rand > maxPlotHeight ){
-                maxPlotHeight = rand
-                println(":\(rand)")
-            }
             return rand
         default:
             return 0
@@ -62,30 +57,35 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
         axes.xAxis.axisLineStyle = lineStyle
         axes.yAxis.axisLineStyle = lineStyle
         
+        //Plot space/range set up...
         var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
         var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
         var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
         xRange.setLengthFloat(100)
+        yRange.setLengthFloat(40)
+        
+        plotSpace.xRange = xRange
+        plotSpace.yRange = yRange
         
         var line = CPTScatterPlot(frame: view.frame)
         line.dataSource = self
         line.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0.01])
-        let maxFloat = Float(maxPlotHeight)
-        println("-------------------------------HEIGHT: \(maxFloat)")
-        yRange.setLengthFloat(maxFloat)
-        
-        plotSpace.xRange = xRange
-        plotSpace.yRange = yRange
         
         graph.addPlot(line)
         
         self.graphView.hostedGraph = graph
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func TestButton(sender: AnyObject) {
+    }
+    
 
 }
 
