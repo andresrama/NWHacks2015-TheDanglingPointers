@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B181E4FD4D2CE502552640E"
+               BlueprintIdentifier = "6125674489EC1B97C570A7E6"
                BuildableName = "libPods-CarO2-CorePlot.a"
                BlueprintName = "Pods-CarO2-CorePlot"
                ReferencedContainer = "container:Pods.xcodeproj">

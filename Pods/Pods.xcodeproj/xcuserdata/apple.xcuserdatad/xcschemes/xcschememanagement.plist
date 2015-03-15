@@ -4,65 +4,260 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Pods-AFOAuth2Manager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-CarO2-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-CarO2-AFOAuth2Manager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Pods-CarO2-CorePlot.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-CarO2-JSONModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>Pods-CarO2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-CarO2Tests-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>Pods-CarO2Tests-AFOAuth2Manager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>Pods-CarO2Tests-CorePlot.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>Pods-CarO2Tests-JSONModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 		<key>Pods-CarO2Tests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>Pods-CorePlot.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
+		<key>Pods-JSONModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>14</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6B181E4FD4D2CE502552640E</key>
+		<key>01565C0EE5941F232FC4E182</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>812B3C7FAE205FF8499045DA</key>
+		<key>05C1F76CA37C985826A0CC23</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED50BAC5489F01C321A40A67</key>
+		<key>0CD40088AC66824FE472F75C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F346F9AA1EE16B23F2D03C20</key>
+		<key>286BA158FD29E4349C9853DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC151FB777338CA39CCBBC33</key>
+		<key>2CEBABE78F60AF669EF53028</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FE5AC69BF073A1A4E06A8E20</key>
+		<key>2E79B10C390B28041C3098F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3947172A67518AD18B899B19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39C920B1D0B7A9A673F1081F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4600654F18147C4A473AF3C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>50F8068DED88D0FCE69FC4C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>543F465102372C270A22DBDA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6125674489EC1B97C570A7E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>635D6A08B5F3861D531EBFC9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6CAD132274E27385BFC8CA53</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78076DD6F7C8F666AE344F1B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7E2C02A22141BA33B5182C64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9273EE4F947CB33427BC9010</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9402B306F484D84C5A8D8303</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>947D37D9FC847CA365E0CE95</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95A0C8ADAD74B0421F2369D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A09B70903A6D96C43760C21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A59F942B8ED941FC1E6E155F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9AF4A108A20CF88D28E043E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB698FB5C083A39CFEC823D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC2BB2B06FCC466A8CFAD995</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B5AA6B9A97F57E69D45E7081</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CAA228B7742C53F5F5B8BC4C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE4D7B361191C41E4EFD1A02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8C549EDB03F766EC2D0C00F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA23EC8B3BD6315A971507F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
