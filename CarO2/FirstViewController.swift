@@ -13,7 +13,11 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     
     let π = M_PI
     
-    //Graph item outlet
+    @IBOutlet weak var averageFE: UILabel!
+    @IBOutlet weak var worstFE: UILabel!
+    @IBOutlet weak var bestFE: UILabel!
+    
+    
     
     @IBOutlet weak var graphView: CPTGraphHostingView!
     
@@ -204,7 +208,9 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     var avg : Double = 0.0
     var max : Double = 100.0
     
+    
     var effMax : Double = 0.0
+    var effMin : Double = 100.0
     var timeMax : NSDate = NSDate(timeIntervalSince1970: 0)
     var timeMin : NSDate = NSDate(timeInterval: 1000, sinceDate: NSDate())
 
@@ -229,6 +235,9 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
                 if (fe > self.effMax) {
                     self.effMax = fe
                 }
+                if( fe < self.effMin){
+                    self.effMin = fe
+                }
                 if ( dt.0.compare(self.timeMax)) == NSComparisonResult.OrderedDescending{
                     self.timeMax = dt.0
                     println(self.timeMax)
@@ -246,6 +255,12 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             println(self.avg)
             print("Max: ")
             println(self.max)
+            
+            var numFormatter : NSNumberFormatter = NSNumberFormatter()
+            numFormatter.formatWidth = 2
+            averageFE.text = "\(numFormatter.stringFromNumber(self.avg))"
+            bestFE.text = "\(numFormatter.stringFromNumber(self.effMax))"
+            worstFE.text = "\(numFormatter.stringFromNumber(self.effMin))"
             
             dispatch_semaphore_signal(ss)
             
