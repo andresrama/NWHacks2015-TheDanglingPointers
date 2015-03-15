@@ -180,6 +180,9 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
                 //println(dt)
                 return dt
             })
+            
+            graph.reloadData()
+            
             dispatch_semaphore_signal(ss)
         }
         
