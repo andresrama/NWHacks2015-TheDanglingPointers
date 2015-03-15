@@ -117,7 +117,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     }
     
     //Graph item thing
-    var currentPlot = CPTXYGraph(frame: CGRectZero)
+    var graph = CPTXYGraph(frame: CGRectZero)
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,16 +128,13 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         getEvents()
     }
     
-    //Graph item thing
-    var graph = CPTXYGraph(frame: CGRectZero)
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func TestButton(sender: AnyObject) {
-        currentPlot.reloadData()
+        graph.reloadData()
     }
 
     func getEvents() {
