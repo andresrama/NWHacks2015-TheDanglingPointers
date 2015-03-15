@@ -16,6 +16,7 @@
 		18C678B91AB3B3AE0014180C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C678B71AB3B3AE0014180C /* LaunchScreen.xib */; };
 		18C678C51AB3B3AE0014180C /* CarO2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678C41AB3B3AE0014180C /* CarO2Tests.swift */; };
 		18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */; };
+		51796C821AB54E3A00DA23CE /* OffsetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51796C811AB54E3A00DA23CE /* OffsetController.swift */; };
 		517D5F671AB401BC0005815A /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D5F661AB401BC0005815A /* TabViewController.swift */; };
 		78B884CB1AB4DD7B00338FD1 /* MojioClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884C91AB4DD7B00338FD1 /* MojioClient.m */; };
 		78B884F31AB4DD8400338FD1 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884CE1AB4DD8400338FD1 /* Address.m */; };
@@ -66,6 +67,7 @@
 		18C678C31AB3B3AE0014180C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C678C41AB3B3AE0014180C /* CarO2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarO2Tests.swift; sourceTree = "<group>"; };
 		18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		51796C811AB54E3A00DA23CE /* OffsetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetController.swift; sourceTree = "<group>"; };
 		517D5F661AB401BC0005815A /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		78B884C81AB4DD7B00338FD1 /* MojioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MojioClient.h; sourceTree = "<group>"; };
 		78B884C91AB4DD7B00338FD1 /* MojioClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MojioClient.m; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				18C678AC1AB3B3AE0014180C /* AppDelegate.swift */,
+				51796C811AB54E3A00DA23CE /* OffsetController.swift */,
 				517D5F661AB401BC0005815A /* TabViewController.swift */,
 				18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */,
 				18C678AE1AB3B3AE0014180C /* FirstViewController.swift */,
@@ -400,6 +403,7 @@
 			files = (
 				78B885041AB4DD8400338FD1 /* User.m in Sources */,
 				78B884FD1AB4DD8400338FD1 /* Mojio.m in Sources */,
+				51796C821AB54E3A00DA23CE /* OffsetController.swift in Sources */,
 				78B884FF1AB4DD8400338FD1 /* Product.m in Sources */,
 				517D5F671AB401BC0005815A /* TabViewController.swift in Sources */,
 				78B884FB1AB4DD8400338FD1 /* Invoice.m in Sources */,
