@@ -137,17 +137,26 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         currentPlot.reloadData()
     }
 
+    
+    let formatter: NSDateFormatter = NSDateFormatter()
+    
+    func makeDate(dateStr: String) -> NSDate {
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        return formatter.dateFromString(dateStr)!
+
+    }
+    
     func getEvents() {
+        var eventsArray : [(NSDate, Double)]? = nil
+        
         func success(data : AnyObject!) {
             println("Success")
             //println(data)
             let arr = data as [Event]
             println(arr.count)
             for item in arr {
-                let formatter: NSDateFormatter = NSDateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-                formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-                let date: NSDate = formatter.dateFromString(item.Time)!
+                let date = makeDate(item.Time)
                 println(date)
                 println(item.FuelEfficiency)
             }
