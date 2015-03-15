@@ -9,7 +9,8 @@
 import UIKit
 
 class FirstViewController: UIViewController, CPTPlotDataSource {
-
+    var mojio : MojioClient?
+    
         //Graph item outlet
     
         @IBOutlet weak var graphView: CPTGraphHostingView!
@@ -95,6 +96,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            self.mojio = MojioClient.client() as? MojioClient
             
             plotGraph(currentPlot,
                 dataSource: self,
@@ -111,6 +113,8 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
                 paddingBottom: 0,
                 backgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0.0]),
                 previousPlot: nil)
+            
+            getEvents()
         }
         
         
@@ -133,6 +137,34 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             
         }
 
-
+    
+    func getEvents() {
+        func success(data : AnyObject!) {
+            println("Success")
+            let arr = data as [AnyObject]
+            println(arr.count)
+            for item in arr {
+                println(item)
+            }
+        }
+        
+        func failure(err : NSError!) {
+            println("Failure")
+            println(err)
+        }
+        
+        let mojio = self.mojio!
+        if (mojio.isUserLoggedIn()) {
+            let queryOptions = [
+                "limit": 2000,
+                "offset": 0,
+                "sortBy": "Time",
+                "desc": true,
+                "criteria": ""
+            ]
+            
+            mojio.getEntityWithPath("Events", withQueryOptions: queryOptions, success: success, failure: failure)
+        }
+    }
 }
 
