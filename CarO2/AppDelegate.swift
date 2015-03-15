@@ -26,49 +26,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         controller.selectedIndex = 1
         
         self.mojio = MojioClient.client() as? MojioClient
+        let mojio = self.mojio!
+        mojio.initWithAppId(self.appId,
+            andSecretKey: self.secretKey, andRedirectUrlScheme: self.redirectScheme)
         
-        if let mojio = self.mojio {
-            mojio.initWithAppId(self.appId,
-                andSecretKey: self.secretKey, andRedirectUrlScheme: self.redirectScheme)
-            
-            /*
-
-            NSDictionary *queryOptions = @{@"limit" : @1, @"offset" : @0, @"sortBy" : @"LastContactTime", @"desc" : @"true"};
-            [self.client getEntityWithPath:@"Vehicles" withQueryOptions:queryOptions success:^(id responseObject) {
-            // executed when the data is successfully fetched
-            }failure: ^{
-            // executed if there was an error in trying to retrieve data
-            }];
-            
-            */
-            var queryOptions = [
-                "limit": 1,
-                "offset": 0,
-                "sortBy": "LastContactTime",
-                "desc": "true"
-            ]
-            mojio.getEntityWithPath("Vehicles", withQueryOptions: queryOptions, success: {
-                (obj: AnyObject!) in
-                println(obj)
-            }, failure: {
-                (err: NSError!) in
-                println(err)
-            })
-            
-            mojio.loginWithCompletionBlock {
-                println("Logged in!")
-            }
-            
-            println("Mojio is initialized", mojio)
-        } else {
-            println("Mojio is None")
-        }
+        // This line of code influences startup time
+        loginWindow()
+        
         return true
     }
-
-    func handleOpenURL(url: NSURL) -> ObjCBool {
-        self.mojio?.handleOpenURL(url)
+    
+    func application(application: UIApplication, handleOpenURL: NSURL) -> ObjCBool {
+        let url = handleOpenURL
         println("handleOpenURL(\(url))")
+        self.mojio?.handleOpenURL(url)
         return true
     }
     
@@ -88,12 +59,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        loginWindow()
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    
+    func loginWindow() {
+        println("Am I logged in ?")
+        self.mojio = MojioClient.client() as? MojioClient
+        let mojio = self.mojio!
+        
+        if (!mojio.isUserLoggedIn()) {
+            println("Not logged in!")
+            
+            mojio.loginWithCompletionBlock {
+                println("Logged in!")
+            }
+        } else {
+            println("Logged in!")
+            
+        }
+    }
 }
 

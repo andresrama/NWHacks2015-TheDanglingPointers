@@ -9,6 +9,7 @@
 import UIKit
 
 class SecondViewController: UIViewController, CPTPlotDataSource {
+    var mojio : MojioClient?
     
     //Graph item outlet
     @IBOutlet weak var graphView: CPTGraphHostingView!
@@ -37,6 +38,7 @@ class SecondViewController: UIViewController, CPTPlotDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         // create graph
         var graph = CPTXYGraph(frame: CGRectZero)
         
