@@ -250,12 +250,10 @@ class Graphing : NSObject, CPTPlotDataSource {
                         
                         let distance = prevDist + Double(cur.Speed) * (d.timeIntervalSinceDate(prevd))/(60.0*60.0)
                         let deltaFuel = distance * Double(cur.FuelEfficiency) - prevDist * Double(prv.FuelEfficiency)
-                        let deltaCO2 = 1e6 * (deltaFuel * 2.3035e-1) / (d.timeIntervalSinceDate(prevd)*1e3)
+                        let deltaCO2 = max(0.0, 1e6 * (deltaFuel * 2.3035e-1) / (d.timeIntervalSinceDate(prevd)*1e3))
                         let totalCO2 = distance * Double(cur.FuelEfficiency) * 2.3035
                         
                         prevDist = distance;
-                        
-                        
                         
                         if ( d.compare(self.timeMax)) == NSComparisonResult.OrderedDescending{
                             self.timeMax = d
