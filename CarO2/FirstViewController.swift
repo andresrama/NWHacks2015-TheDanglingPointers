@@ -34,7 +34,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         case 0:
             if let aaa = eventsArray {
                 let count = Float(aaa.count)/2.0
-                let (date, fe) = aaa[Int(idx+Int(count))]
+                let (date, dCO2, fe) = aaa[Int(idx+Int(count))]
                 
                 return date.timeIntervalSince1970//.timeIntervalSinceDate(NSDate(timeIntervalSince1970: self.timeMin.timeIntervalSince1970))
             } else {
@@ -43,10 +43,10 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         case 1:
             if let aaa = eventsArray {
                 // fuel efficiency
-                //return aaa[Int(idx)].2
+                return aaa[Int(idx)].2
 
                 // dCO2
-                return aaa[Int(idx)].1
+                //return aaa[Int(idx)].1
             } else {
                 return 0.0
             }
@@ -168,9 +168,9 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         
         //plotSpace.globalYRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
         
-        plotSpace.allowsMomentumX = true
-        plotSpace.allowsMomentumY = false
-        plotSpace.allowsUserInteraction = true
+        //plotSpace.allowsMomentumX = true
+        //plotSpace.allowsMomentumY = false
+        plotSpace.allowsUserInteraction = false
         
         var line = CPTScatterPlot(frame: view.frame)
         
