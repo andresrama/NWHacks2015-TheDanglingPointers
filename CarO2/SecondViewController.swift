@@ -9,6 +9,7 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    var graphing : Graphing?
     
     @IBOutlet weak var offsetButton: UIButton!
    
