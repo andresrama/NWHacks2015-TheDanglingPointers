@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		182DCBFE1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 182DCBFD1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m */; };
-		1888E7161AB567D1002E426F /* NSFormatterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888E7151AB567D1002E426F /* NSFormatterClass.swift */; };
+		1888E7181AB58896002E426F /* DateFormatterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888E7171AB58896002E426F /* DateFormatterClass.swift */; };
 		18C678AD1AB3B3AE0014180C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678AC1AB3B3AE0014180C /* AppDelegate.swift */; };
 		18C678AF1AB3B3AE0014180C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678AE1AB3B3AE0014180C /* FirstViewController.swift */; };
 		18C678B11AB3B3AE0014180C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678B01AB3B3AE0014180C /* SecondViewController.swift */; };
@@ -57,7 +57,7 @@
 		182DCBFC1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPTMutablePlotRange+SwiftCompat.h"; sourceTree = "<group>"; };
 		182DCBFD1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CPTMutablePlotRange+SwiftCompat.m"; sourceTree = "<group>"; };
 		186829A01AB3D81500F629A0 /* CarO2-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CarO2-Bridging-Header.h"; path = "CarO2/CarO2-Bridging-Header.h"; sourceTree = "<group>"; };
-		1888E7151AB567D1002E426F /* NSFormatterClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFormatterClass.swift; sourceTree = "<group>"; };
+		1888E7171AB58896002E426F /* DateFormatterClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterClass.swift; sourceTree = "<group>"; };
 		18C678A71AB3B3AE0014180C /* CarO2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarO2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C678AB1AB3B3AE0014180C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C678AC1AB3B3AE0014180C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,7 +188,6 @@
 				18C678B51AB3B3AE0014180C /* Images.xcassets */,
 				18C678B71AB3B3AE0014180C /* LaunchScreen.xib */,
 				18C678AA1AB3B3AE0014180C /* Supporting Files */,
-				1888E7151AB567D1002E426F /* NSFormatterClass.swift */,
 			);
 			path = CarO2;
 			sourceTree = "<group>";
@@ -197,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				18C678AB1AB3B3AE0014180C /* Info.plist */,
+				1888E7171AB58896002E426F /* DateFormatterClass.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -415,6 +415,7 @@
 				78B884FF1AB4DD8400338FD1 /* Product.m in Sources */,
 				781E1BD21AB530D7000770F8 /* Event.m in Sources */,
 				517D5F671AB401BC0005815A /* TabViewController.swift in Sources */,
+				1888E7181AB58896002E426F /* DateFormatterClass.swift in Sources */,
 				78B884FB1AB4DD8400338FD1 /* Invoice.m in Sources */,
 				78B884FA1AB4DD8400338FD1 /* ImageSize.m in Sources */,
 				18C678B11AB3B3AE0014180C /* SecondViewController.swift in Sources */,
@@ -432,7 +433,6 @@
 				18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */,
 				78B884F61AB4DD8400338FD1 /* CarState.m in Sources */,
 				78B885051AB4DD8400338FD1 /* Vehicle.m in Sources */,
-				1888E7161AB567D1002E426F /* NSFormatterClass.swift in Sources */,
 				18C678AF1AB3B3AE0014180C /* FirstViewController.swift in Sources */,
 				182DCBFE1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m in Sources */,
 				78B884FC1AB4DD8400338FD1 /* Location.m in Sources */,
