@@ -567,12 +567,50 @@
                                     <navigationItem title="Overall CO₂ Emissions" id="EA7-aa-nBd"/>
                                 </items>
                             </navigationBar>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgT-sF-3g5" customClass="CPTGraphHostingView">
+                                <rect key="frame" x="0.0" y="120" width="600" height="300"/>
+                                <color key="backgroundColor" white="0.70939555919999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="rpv-i8-vog"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3l-9y-ims">
+                                <rect key="frame" x="137" y="445" width="200" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ct3-Mn-hTD"/>
+                                    <constraint firstAttribute="height" constant="42" id="dN9-Tu-VTi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="0.1182524314" green="0.52663419160000002" blue="0.80782433710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9a-h9-isi">
+                                <rect key="frame" x="269" y="495" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGw-S3-9fv">
+                                <rect key="frame" x="347" y="465" width="14" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.45918996709999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bLR-Ob-8rE" firstAttribute="top" secondItem="YN4-BN-9jn" secondAttribute="bottom" id="3CE-mj-LE0"/>
+                            <constraint firstItem="jGw-S3-9fv" firstAttribute="leading" secondItem="U3l-9y-ims" secondAttribute="trailing" constant="10" id="3bv-AC-nB4"/>
+                            <constraint firstItem="fgT-sF-3g5" firstAttribute="top" secondItem="YN4-BN-9jn" secondAttribute="bottom" constant="100" id="6YH-3D-DWx"/>
                             <constraint firstItem="bLR-Ob-8rE" firstAttribute="leading" secondItem="di4-f8-z7l" secondAttribute="leadingMargin" constant="-16" id="MyW-mQ-J1j"/>
+                            <constraint firstItem="fgT-sF-3g5" firstAttribute="width" secondItem="di4-f8-z7l" secondAttribute="width" id="WY8-J4-nii"/>
+                            <constraint firstItem="U3l-9y-ims" firstAttribute="trailing" secondItem="d9a-h9-isi" secondAttribute="trailing" constant="5" id="Wl2-PO-xB9"/>
+                            <constraint firstItem="U3l-9y-ims" firstAttribute="top" secondItem="fgT-sF-3g5" secondAttribute="bottom" constant="25" id="a7C-0Y-OSW"/>
+                            <constraint firstItem="fgT-sF-3g5" firstAttribute="leading" secondItem="bLR-Ob-8rE" secondAttribute="leading" id="hZE-k3-TBW"/>
                             <constraint firstItem="bLR-Ob-8rE" firstAttribute="centerX" secondItem="di4-f8-z7l" secondAttribute="centerX" id="p4z-OY-CAM"/>
+                            <constraint firstItem="jGw-S3-9fv" firstAttribute="top" secondItem="fgT-sF-3g5" secondAttribute="bottom" constant="45" id="sUV-Xb-yWl"/>
+                            <constraint firstItem="U3l-9y-ims" firstAttribute="centerX" secondItem="fgT-sF-3g5" secondAttribute="centerX" constant="-63" id="yKi-1h-eQb"/>
+                            <constraint firstItem="d9a-h9-isi" firstAttribute="top" secondItem="U3l-9y-ims" secondAttribute="bottom" constant="8" id="zXo-En-6Ua"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="CO₂" image="cloud" id="9CM-NW-u88"/>
