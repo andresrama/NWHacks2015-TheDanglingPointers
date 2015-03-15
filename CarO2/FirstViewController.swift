@@ -123,21 +123,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         super.viewDidLoad()
         self.mojio = MojioClient.client() as? MojioClient
         
-        plotGraph(currentPlot,
-            dataSource: self,
-            tittle: "Function Plotted Line Graph",
-            xLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
-            xLineWidth: 1,
-            yLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
-            yLineWidth: 0,
-            xRangeLegnth: 25,
-            yRangeLegnth: 30,
-            paddingLeft: 0,
-            paddingRight: 0,
-            paddingTop: 0,
-            paddingBottom: 0,
-            backgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0.0]),
-            previousPlot: nil)
+    
         
         getEvents()
     }
@@ -151,13 +137,6 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     }
     
     @IBAction func TestButton(sender: AnyObject) {
-        isUpdating = !isUpdating
-        var color : CGColor
-        if(isUpdating){
-            color = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 255, 0, 0.01])
-        }else{
-            color = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 255, 0.01])
-        }
         currentPlot.reloadData()
     }
 
