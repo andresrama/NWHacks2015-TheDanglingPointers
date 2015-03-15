@@ -20,7 +20,8 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     // Funcs to make the CPTPlotDataSource attribute true - Start
     func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
         if let aaa = eventsArray {
-            return UInt(aaa.count)
+            let count = Float(aaa.count)/2.0
+            return UInt(count)
         } else {
             return 0
         }
@@ -31,7 +32,14 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex idx: UInt) -> NSNumber! {
         switch(fieldEnum){
         case 0:
-            return idx
+            if let aaa = eventsArray {
+                let count = Float(aaa.count)/2.0
+                let (date, fe) = aaa[Int(idx+Int(count))]
+                
+                return date.timeIntervalSince1970//.timeIntervalSinceDate(NSDate(timeIntervalSince1970: self.timeMin.timeIntervalSince1970))
+            } else {
+                return 0.0
+            }
         case 1:
             if let aaa = eventsArray {
                 // fuel efficiency
@@ -78,13 +86,16 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         
         graph.title = "Tittle"
         graph.plotAreaFrame.paddingTop = 5
-        graph.plotAreaFrame.paddingBottom = 40
+        graph.plotAreaFrame.paddingBottom = 60
         graph.plotAreaFrame.paddingLeft = 60
         graph.plotAreaFrame.paddingRight = 5
         
         var axes = graph.axisSet as CPTXYAxisSet
         axes.xAxis.title = "X-AXIS"
         axes.yAxis.title = "Y-AXIS"
+        
+        axes.yAxis.titleOffset = 30
+        axes.xAxis.titleOffset = 35
         
         var xLineStyle = CPTMutableLineStyle()
         xLineStyle.lineColor = blue
@@ -101,12 +112,13 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         //axes.yAxis.minorTickLength = 10
         axes.yAxis.minorTicksPerInterval = 1
         
-        axes.xAxis.labelRotation = CGFloat(π/2.0)
+        axes.xAxis.labelRotation = CGFloat(π/4.0)
+        
         //axes.xAxis.majorTickLength = 50
         //axes.xAxis.minorTickLength = 10
-        axes.xAxis.majorTickLength = 10
-        axes.xAxis.minorTickLength = 10
-        axes.xAxis.minorTicksPerInterval = 1
+        //axes.xAxis.majorTickLength = 10
+        //axes.xAxis.minorTickLength = 10
+        //axes.xAxis.minorTicksPerInterval = 1
 
 
         axes.xAxis.labelingPolicy = CPTAxisLabelingPolicy.Automatic
@@ -114,6 +126,16 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
 
         axes.yAxis.labelingPolicy = CPTAxisLabelingPolicy.Automatic
         axes.yAxis.preferredNumberOfMajorTicks = 5
+        
+        var numFormatter = NSNumberFormatter()
+        numFormatter.formatWidth = 2
+        
+        //dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        //dateFormatter.dateFormat = "hh:mm dd/MM/yy"
+        var hackyPOS  = DateFormatterClass()
+        hackyPOS.prep(self.timeMin.timeIntervalSince1970)
+        axes.xAxis.labelFormatter = hackyPOS
+        axes.yAxis.labelFormatter = numFormatter
 
         var gridLineStyle = CPTMutableLineStyle()
         gridLineStyle.lineColor = grey
@@ -121,24 +143,30 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         
         axes.yAxis.majorGridLineStyle = gridLineStyle
         
+        /*
         var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
         
         var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
         var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
-        xRange.setLengthFloat(Float(80))
+        xRange.minLimitDouble =
+        xRange.setLengthFloat(Float(Int(timeMax-timeMin)))
         yRange.setLengthFloat(Float(max))
         
         plotSpace.xRange = xRange
-        plotSpace.yRange = yRange
+        plotSpace.yRange = yRange*/
+        
+        
+        var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
+        
         var gxr = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
         if let aaa = eventsArray {
             if (aaa.count > 80) {
                 gxr.setLengthFloat(Float(aaa.count))
             }
         }
-        plotSpace.globalXRange = gxr
+        //plotSpace.globalXRange = gxr
         
-        plotSpace.globalYRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
+        //plotSpace.globalYRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
         
         plotSpace.allowsMomentumX = true
         plotSpace.allowsMomentumY = false
@@ -160,6 +188,10 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         
         //You can put stuff after too. just dont fuck me k?
         graph.reloadData()
+        
+        
+        
+        graph.defaultPlotSpace.scaleToFitPlots(graph.allPlots())
     }
     
     let formatter: NSDateFormatter = NSDateFormatter()
@@ -176,6 +208,10 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     var avg : Double = 0.0
     var max : Double = 100.0
     
+    var effMax : Double = 0.0
+    var timeMax : NSDate = NSDate(timeIntervalSince1970: 0)
+    var timeMin : NSDate = NSDate(timeInterval: 1000, sinceDate: NSDate())
+
     func getEvents() {
         
         func success(data : AnyObject!) {
@@ -193,8 +229,16 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
                 let dt: (NSDate, Double, Double) = (self.makeDate(event.Time), 0.0, fe)
                 ccc++
                 sss += fe
-                if (fe > self.max) {
-                    self.max = fe
+                if (fe > self.effMax) {
+                    self.effMax = fe
+                }
+                if ( dt.0.compare(self.timeMax)) == NSComparisonResult.OrderedDescending{
+                    self.timeMax = dt.0
+                    println(self.timeMax)
+                }
+                if (dt.0.compare(self.timeMin)) == NSComparisonResult.OrderedAscending{
+                    self.timeMin = dt.0
+                    println(self.timeMin)
                 }
                 //println(dt)
                 return dt
