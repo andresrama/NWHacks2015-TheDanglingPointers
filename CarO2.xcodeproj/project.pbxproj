@@ -20,6 +20,7 @@
 		51796C821AB54E3A00DA23CE /* OffsetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51796C811AB54E3A00DA23CE /* OffsetController.swift */; };
 		517D5F671AB401BC0005815A /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D5F661AB401BC0005815A /* TabViewController.swift */; };
 		781E1BD21AB530D7000770F8 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 781E1BD11AB530D7000770F8 /* Event.m */; };
+		78281B101AB595DC00B67D61 /* Graphing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78281B0F1AB595DC00B67D61 /* Graphing.swift */; };
 		78B884CB1AB4DD7B00338FD1 /* MojioClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884C91AB4DD7B00338FD1 /* MojioClient.m */; };
 		78B884F31AB4DD8400338FD1 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884CE1AB4DD8400338FD1 /* Address.m */; };
 		78B884F41AB4DD8400338FD1 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884D01AB4DD8400338FD1 /* App.m */; };
@@ -74,6 +75,7 @@
 		517D5F661AB401BC0005815A /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		781E1BD11AB530D7000770F8 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		781E1BD31AB530E8000770F8 /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		78281B0F1AB595DC00B67D61 /* Graphing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graphing.swift; sourceTree = "<group>"; };
 		78B884C81AB4DD7B00338FD1 /* MojioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MojioClient.h; sourceTree = "<group>"; };
 		78B884C91AB4DD7B00338FD1 /* MojioClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MojioClient.m; sourceTree = "<group>"; };
 		78B884CA1AB4DD7B00338FD1 /* MojioSDKiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MojioSDKiOS.h; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				18C678B51AB3B3AE0014180C /* Images.xcassets */,
 				18C678B71AB3B3AE0014180C /* LaunchScreen.xib */,
 				18C678AA1AB3B3AE0014180C /* Supporting Files */,
+				78281B0F1AB595DC00B67D61 /* Graphing.swift */,
 			);
 			path = CarO2;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				78B884F61AB4DD8400338FD1 /* CarState.m in Sources */,
 				78B885051AB4DD8400338FD1 /* Vehicle.m in Sources */,
 				18C678AF1AB3B3AE0014180C /* FirstViewController.swift in Sources */,
+				78281B101AB595DC00B67D61 /* Graphing.swift in Sources */,
 				182DCBFE1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m in Sources */,
 				78B884FC1AB4DD8400338FD1 /* Location.m in Sources */,
 				78B884F71AB4DD8400338FD1 /* DiagnosticCodes.m in Sources */,
