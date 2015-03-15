@@ -141,6 +141,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     func getEvents() {
         func success(data : AnyObject!) {
             println("Success")
+            println(data)
             let arr = data as [AnyObject]
             println(arr.count)
             for item in arr {
@@ -156,11 +157,9 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         let mojio = self.mojio!
         if (mojio.isUserLoggedIn()) {
             let queryOptions = [
-                "limit": 2000,
+                "limit": 10,
                 "offset": 0,
-                "sortBy": "Time",
-                "desc": true,
-                "criteria": ""
+                "desc": "true"
             ]
             
             mojio.getEntityWithPath("Events", withQueryOptions: queryOptions, success: success, failure: failure)
