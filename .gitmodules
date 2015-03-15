@@ -1,0 +1,4 @@
+[submodule "mojio-ios-sdk"]
+	path = mojio-ios-sdk
+	url = https://github.com/mojio/mojio-ios-sdk
+  ignore = dirty
