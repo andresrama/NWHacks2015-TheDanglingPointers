@@ -34,8 +34,11 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             return idx
         case 1:
             if let aaa = eventsArray {
-                let (date, fe) = aaa[Int(idx)]
-                return fe
+                // fuel efficiency
+                //return aaa[Int(idx)].2
+
+                // dCO2
+                return aaa[Int(idx)].1
             } else {
                 return 0.0
             }
@@ -168,12 +171,12 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
 
     }
     
-    var eventsArray : [(NSDate, Double)]? = nil
+    // datetime, deltaCO2, fuelEfficiency
+    var eventsArray : [(NSDate, Double, Double)]? = nil
     var avg : Double = 0.0
     var max : Double = 100.0
     
     func getEvents() {
-        let ss = dispatch_semaphore_create(0)
         
         func success(data : AnyObject!) {
             println("Success")
@@ -187,7 +190,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             var sss: Double = 0.0
             eventsArray = arr.map({ event in
                 let fe = Double(event.FuelEfficiency)
-                let dt: (NSDate, Double) = (self.makeDate(event.Time), fe)
+                let dt: (NSDate, Double, Double) = (self.makeDate(event.Time), 0.0, fe)
                 ccc++
                 sss += fe
                 if (fe > self.max) {
@@ -203,26 +206,68 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             print("Max: ")
             println(self.max)
             
-            dispatch_semaphore_signal(ss)
-            
             self.regraph()
         }
-        
-        func failure(err : NSError!) {
-            println("Failure")
-            println(err)
-            dispatch_semaphore_signal(ss)
-        }
-        
+
         let mojio = self.mojio!
         if (mojio.isUserLoggedIn()) {
             let queryOptions = [
-                "limit": 200,
+                "limit": 1000,
                 "offset": 0,
-                "desc": "true"
             ]
             
-            mojio.getEntityWithPath("Events", withQueryOptions: queryOptions, success: success, failure: failure)
+            mojio.getEntityWithPath("Trips", withQueryOptions: queryOptions, success: {
+                (data : AnyObject!) in
+                let arrTrips = data as [Trip]
+                let latestTrip = arrTrips[arrTrips.count - 1]
+
+                let queryOptions = [
+                    "limit": 1000,
+                    "offset": 0,
+                    "id": latestTrip._id
+                ]
+                mojio.getEntityWithPath("Trips/\(latestTrip._id)/Events", withQueryOptions: queryOptions, success: {
+                    (data : AnyObject!) in  
+                    let result = data as [Event]
+                    // Generate a set of XY values
+
+                    self.max = 1
+                    var prevDist:Double = 0.0
+                    var ccc = 0
+                    var sss: Double = 0.0
+
+                    let pairs: [(NSDate, Double, Double)] = Array(map(1..<result.count - 1) {
+                        (i: Int) in
+                        let cur: Event = result[i]
+                        let prv: Event = result[i - 1]
+                        let d = self.makeDate(cur.Time);
+                        let prevd = self.makeDate(prv.Time);
+
+                        let distance = prevDist + Double(cur.Speed) * (d.timeIntervalSinceDate(prevd))/(60.0*60.0)
+                        let deltaFuel = distance * Double(cur.FuelEfficiency) - prevDist * Double(prv.FuelEfficiency)
+                        let deltaCO2 = 1e6 * (deltaFuel * 2.3035e-1) / (d.timeIntervalSinceDate(prevd)*1e3)
+                        let totalCO2 = distance * Double(cur.FuelEfficiency) * 2.3035
+
+                        prevDist = distance;
+
+                        ccc++
+                        sss += deltaCO2
+                        if (deltaCO2 > self.max) {
+                            self.max = deltaCO2
+                        }
+
+                        return (d, deltaCO2, Double(cur.FuelEfficiency));
+                    
+                    })
+
+                    self.eventsArray = pairs;
+                    self.avg = sss / Double(ccc)
+
+                    self.regraph()
+                    println(pairs);
+                }, failure: self.handleFailure)
+            }, failure: self.handleFailure)
+
         }
         
         //let timeout = dispatch_time(DISPATCH_TIME_NOW, 100000000000)
@@ -230,6 +275,12 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         //println(dispatch_semaphore_wait(ss, timeout))
         //print("eventsArray == nil ?")
         //println(eventsArray == nil)
+    }
+
+        
+    func handleFailure(err : NSError!) {
+        println("Failure")
+        println(err)
     }
 }
 
