@@ -69,7 +69,7 @@ class Graphing : NSObject, CPTPlotDataSource {
     }
     //End
     
-    func regraph() {
+    func regraph(onRegraph: (() -> Void)?) {
         //Andys code. please no delete ty
         //My "Globals"
         var blue = CPTColor(componentRed: 0.0, green: 0.0, blue: 1.0, alpha: 0.5)
@@ -184,6 +184,10 @@ class Graphing : NSObject, CPTPlotDataSource {
         
         
         graph.defaultPlotSpace.scaleToFitPlots(graph.allPlots())
+        
+        if let f = onRegraph {
+            f()
+        }
     }
     
     let formatter: NSDateFormatter = NSDateFormatter()
@@ -201,10 +205,11 @@ class Graphing : NSObject, CPTPlotDataSource {
     var max : Double = 100.0
     
     var effMax : Double = 0.0
+    var effMin : Double = 100.0
     var timeMax : NSDate = NSDate(timeIntervalSince1970: 0)
     var timeMin : NSDate = NSDate(timeInterval: 1000, sinceDate: NSDate())
     
-    func getEvents() {
+    func getEvents(onRegraph: (() -> Void)?) {
         
         func success(data : AnyObject!) {
             println("Success")
@@ -242,7 +247,7 @@ class Graphing : NSObject, CPTPlotDataSource {
             print("Max: ")
             println(self.max)
             
-            self.regraph()
+            self.regraph(onRegraph)
         }
         
         let mojio = self.mojio
@@ -299,7 +304,7 @@ class Graphing : NSObject, CPTPlotDataSource {
                     self.eventsArray = pairs;
                     self.avg = sss / Double(ccc)
                     
-                    self.regraph()
+                    self.regraph(onRegraph)
                     println(pairs);
                     }, failure: self.handleFailure)
                 }, failure: self.handleFailure)

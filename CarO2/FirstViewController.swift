@@ -18,7 +18,10 @@ class FirstViewController: UIViewController {
     
     //Graph item outlet
     @IBOutlet weak var graphView: CPTGraphHostingView!
-        
+    @IBOutlet weak var averageFE: UILabel!
+    @IBOutlet weak var worstFE: UILabel!
+    @IBOutlet weak var bestFE: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mojio = MojioClient.client() as? MojioClient
@@ -29,8 +32,30 @@ class FirstViewController: UIViewController {
             graphView: self.graphView,
             view: view,
             fuelEff: true)
-        self.graphing!.regraph()
-        self.graphing!.getEvents()
+        self.graphing!.regraph(onRegraph)
+        self.graphing!.getEvents(onRegraph)
+    }
+    
+    func onRegraph() {
+        let graphing = self.graphing!
+        var avg = graphing.avg
+        print("Avg: ")
+        println(graphing.avg)
+        print("Max: ")
+        println(graphing.max)
+        
+        var numFormatter : NSNumberFormatter = NSNumberFormatter()
+        numFormatter.maximumFractionDigits = 1
+        if let best = (numFormatter.stringFromNumber(graphing.effMin)){
+            bestFE.text = best
+        }
+        if let worst = (numFormatter.stringFromNumber(graphing.effMax)){
+            worstFE.text = worst
+        }
+        
+        if let average = (numFormatter.stringFromNumber(graphing.avg)) {
+            averageFE.text = average
+        }
     }
     
     override func didReceiveMemoryWarning() {
