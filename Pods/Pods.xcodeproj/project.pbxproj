@@ -1443,7 +1443,7 @@
 			children = (
 				DB855C99C905896421B75267 /* Pods */,
 				966F2AB3F36D64D021B4E2FA /* Pods-CarO2 */,
-				A20922DB0D973F5CE6DC4044 /* Pods-CarO2Tests */,
+				A20922DB0D973F5CE6DC4044 /* Support Files */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -1588,7 +1588,7 @@
 			path = "Target Support Files/Pods-CarO2";
 			sourceTree = "<group>";
 		};
-		A20922DB0D973F5CE6DC4044 /* Pods-CarO2Tests */ = {
+		A20922DB0D973F5CE6DC4044 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				524FBF87040E4C796EC5C095 /* Pods-CarO2Tests-acknowledgements.markdown */,
@@ -2445,7 +2445,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8BF6569CBD753B2F5E45FEE6 /* PBXTargetDependency */,
 			);
 			name = "Pods-CarO2Tests-JSONModel";
 			productName = "Pods-CarO2Tests-JSONModel";
@@ -2708,7 +2707,7 @@
 		330C10C4B87E43F86B0C5DB5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0620;
 			};
 			buildConfigurationList = 5EC801EE1DD6331F2A49F4B3 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3343,27 +3342,13 @@
 			};
 			name = Debug;
 		};
-		148EBE49F8A49968622271B0 /* Debug */ = {
+		148EBE49F8A49968622271B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDE8D2CD71A0925588A099D0 /* Pods-CarO2-AFNetworking-Private.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-CarO2-AFNetworking/Pods-CarO2-AFNetworking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		2437D1EF4CB8CD3A802DEDBA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD10FFD50E00FA945B60F1D3 /* Pods-CarO2Tests.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -3503,6 +3488,28 @@
 			};
 			name = Debug;
 		};
+		51796C7F1AB54BEC00DA23CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Pods-CarO2-AFNetworking";
+			};
+			name = Debug;
+		};
+		51796C801AB54BEC00DA23CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Pods-CarO2-CorePlot";
+			};
+			name = Debug;
+		};
 		548C609998102FF56E98265C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3537,7 +3544,7 @@
 			};
 			name = Release;
 		};
-		59D0C990AFCBFFA66754002B /* Release */ = {
+		59D0C990AFCBFFA66754002B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 335569B2BAF059B8E4EFD41C /* Pods-CarO2Tests-JSONModel-Private.xcconfig */;
 			buildSettings = {
@@ -3704,7 +3711,7 @@
 			};
 			name = Release;
 		};
-		A08213A7176036E566A60FA3 /* Debug */ = {
+		A08213A7176036E566A60FA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 335569B2BAF059B8E4EFD41C /* Pods-CarO2Tests-JSONModel-Private.xcconfig */;
 			buildSettings = {
@@ -3736,10 +3743,11 @@
 			};
 			name = Release;
 		};
-		A5FC7C9270EABFC05F26D4F2 /* Debug */ = {
+		A5FC7C9270EABFC05F26D4F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED8D1F71089DD20FB6B3F5B5 /* Pods-CarO2-CorePlot-Private.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-CarO2-CorePlot/Pods-CarO2-CorePlot-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -3993,8 +4001,8 @@
 		BAFC64E7A6E75CE730170393 /* Build configuration list for PBXNativeTarget "Pods-CarO2Tests-JSONModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A08213A7176036E566A60FA3 /* Debug */,
-				59D0C990AFCBFFA66754002B /* Release */,
+				A08213A7176036E566A60FA3 /* Release */,
+				59D0C990AFCBFFA66754002B /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4011,8 +4019,9 @@
 		D3FAF8635919A4E6CA0A46A4 /* Build configuration list for PBXNativeTarget "Pods-CarO2-AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				148EBE49F8A49968622271B0 /* Debug */,
+				148EBE49F8A49968622271B0 /* Release */,
 				1FF806701FE9ED28B845CA8A /* Release */,
+				51796C7F1AB54BEC00DA23CE /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4029,8 +4038,9 @@
 		FBBF2E38CA6779376B9AD9F4 /* Build configuration list for PBXNativeTarget "Pods-CarO2-CorePlot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A5FC7C9270EABFC05F26D4F2 /* Debug */,
+				A5FC7C9270EABFC05F26D4F2 /* Release */,
 				36B308574BA1C0B3EB541663 /* Release */,
+				51796C801AB54BEC00DA23CE /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
