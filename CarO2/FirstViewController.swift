@@ -33,8 +33,8 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         switch(fieldEnum){
         case 0:
             if let aaa = eventsArray {
-                let count = Float(aaa.count)/2.0
-                let (date, dCO2, fe) = aaa[Int(idx+Int(count))]
+                let count = Float(aaa.count)
+                let (date, dCO2, fe) = aaa[Int(idx)]
                 
                 return date.timeIntervalSince1970//.timeIntervalSinceDate(NSDate(timeIntervalSince1970: self.timeMin.timeIntervalSince1970))
             } else {
