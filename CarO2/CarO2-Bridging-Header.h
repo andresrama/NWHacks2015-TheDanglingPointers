@@ -33,4 +33,6 @@
 #include "Token.h"
 #include "Trip.h"
 #include "User.h"
+#include "Event.h"
+#include "Accelerometer.h"
 #include "Vehicle.h"

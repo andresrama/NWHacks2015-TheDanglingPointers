@@ -30,7 +30,7 @@
 @property (strong, nonatomic) NSString *OwnerId;
 @property (assign, nonatomic) float RPM;
 @property (assign, nonatomic) float Speed;
-@property (strong, nonatomic) NSDate *Time;
+@property (strong, nonatomic) NSString *Time;
 @property (assign, nonatomic) BOOL TimeIsApprox;
 @property (strong, nonatomic) NSString *TripId;
 @property (strong, nonatomic) NSString *Type;
