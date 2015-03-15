@@ -123,6 +123,10 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         super.viewDidLoad()
         self.mojio = MojioClient.client() as? MojioClient
         
+        //Andys code. please no delete ty
+        graph.title = "Tittle"
+        
+        //You can put stuff after too. just dont fuck me k?
     
         
         getEvents()
