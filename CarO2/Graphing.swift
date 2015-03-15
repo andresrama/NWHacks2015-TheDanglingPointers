@@ -10,7 +10,7 @@ import Foundation
 
 class Graphing : NSObject, CPTPlotDataSource {
     let π = M_PI
-
+    
     var mojio : MojioClient
     var graph : CPTXYGraph
     var view : UIView!
@@ -186,6 +186,7 @@ class Graphing : NSObject, CPTPlotDataSource {
         graph.defaultPlotSpace.scaleToFitPlots(graph.allPlots())
         
         if let f = onRegraph {
+            println("TOROLROELEOE")
             f()
         }
     }
@@ -198,57 +199,23 @@ class Graphing : NSObject, CPTPlotDataSource {
         return formatter.dateFromString(dateStr)!
         
     }
-
+    
     // datetime, deltaCO2, fuelEfficiency
     var eventsArray : [(NSDate, Double, Double)]? = nil
-    var avg : Double = 0.0
-    var max : Double = 100.0
     
+    var effAvg : Double = 0.0
     var effMax : Double = 0.0
     var effMin : Double = 100.0
+    
+    var co2Avg : Double = 0.0
+    var co2Max : Double = 0.0
+    var co2Min : Double = 100.0
+    
+    
     var timeMax : NSDate = NSDate(timeIntervalSince1970: 0)
     var timeMin : NSDate = NSDate(timeInterval: 1000, sinceDate: NSDate())
     
     func getEvents(onRegraph: (() -> Void)?) {
-        
-        func success(data : AnyObject!) {
-            println("Success")
-            //println(data)
-            let arr = data as [Event]
-            
-            print("Items: ")
-            println(arr.count)
-            
-            var ccc = 0
-            var sss: Double = 0.0
-            eventsArray = arr.map({ event in
-                let fe = Double(event.FuelEfficiency)
-                let dt: (NSDate, Double, Double) = (self.makeDate(event.Time), 0.0, fe)
-                ccc++
-                sss += fe
-                if (fe > self.effMax) {
-                    self.effMax = fe
-                }
-                if ( dt.0.compare(self.timeMax)) == NSComparisonResult.OrderedDescending{
-                    self.timeMax = dt.0
-                    println(self.timeMax)
-                }
-                if (dt.0.compare(self.timeMin)) == NSComparisonResult.OrderedAscending{
-                    self.timeMin = dt.0
-                    println(self.timeMin)
-                }
-                //println(dt)
-                return dt
-            })
-            
-            self.avg = sss / Double(ccc)
-            print("Avg: ")
-            println(self.avg)
-            print("Max: ")
-            println(self.max)
-            
-            self.regraph(onRegraph)
-        }
         
         let mojio = self.mojio
         if (mojio.isUserLoggedIn()) {
@@ -272,10 +239,7 @@ class Graphing : NSObject, CPTPlotDataSource {
                     let result = data as [Event]
                     // Generate a set of XY values
                     
-                    self.max = 1
                     var prevDist:Double = 0.0
-                    var ccc = 0
-                    var sss: Double = 0.0
                     
                     let pairs: [(NSDate, Double, Double)] = Array(map(1..<result.count - 1) {
                         (i: Int) in
@@ -291,18 +255,35 @@ class Graphing : NSObject, CPTPlotDataSource {
                         
                         prevDist = distance;
                         
-                        ccc++
-                        sss += deltaCO2
-                        if (deltaCO2 > self.max) {
-                            self.max = deltaCO2
+                        
+                        
+                        if ( d.compare(self.timeMax)) == NSComparisonResult.OrderedDescending{
+                            self.timeMax = d
+                            println(self.timeMax)
+                        }
+                        if (d.compare(self.timeMin)) == NSComparisonResult.OrderedAscending{
+                            self.timeMin = d
+                            println(self.timeMin)
                         }
                         
                         return (d, deltaCO2, Double(cur.FuelEfficiency));
                         
-                        })
+                    })
                     
                     self.eventsArray = pairs;
-                    self.avg = sss / Double(ccc)
+                    
+                    let nnn = Double(self.eventsArray!.count)
+                    self.effMin = self.eventsArray!.map({ $0.2 }).reduce(Double.infinity, { min($0, $1) })
+                    self.effMax = self.eventsArray!.map({ $0.2 }).reduce(-Double.infinity, { max($0, $1) })
+                    self.effAvg = self.eventsArray!.map({ $0.2 }).reduce(0.0, +) / nnn
+                    
+                    self.co2Min = self.eventsArray!.map({ $0.1 }).reduce(Double.infinity, { min($0, $1) })
+                    self.co2Max = self.eventsArray!.map({ $0.1 }).reduce(-Double.infinity, { max($0, $1) })
+                    self.co2Avg = self.eventsArray!.map({ $0.1 }).reduce(0.0, +) / nnn
+                    
+                    println("e=(\(self.effMin), \(self.effMax), \(self.effAvg))")
+                    println("c=(\(self.co2Min), \(self.co2Max), \(self.co2Avg))")
+                    
                     
                     self.regraph(onRegraph)
                     println(pairs);

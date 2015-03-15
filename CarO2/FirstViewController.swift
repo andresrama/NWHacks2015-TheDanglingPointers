@@ -38,11 +38,6 @@ class FirstViewController: UIViewController {
     
     func onRegraph() {
         let graphing = self.graphing!
-        var avg = graphing.avg
-        print("Avg: ")
-        println(graphing.avg)
-        print("Max: ")
-        println(graphing.max)
         
         var numFormatter : NSNumberFormatter = NSNumberFormatter()
         numFormatter.maximumFractionDigits = 1
@@ -53,7 +48,7 @@ class FirstViewController: UIViewController {
             worstFE.text = worst
         }
         
-        if let average = (numFormatter.stringFromNumber(graphing.avg)) {
+        if let average = (numFormatter.stringFromNumber(graphing.effAvg)) {
             averageFE.text = average
         }
     }
