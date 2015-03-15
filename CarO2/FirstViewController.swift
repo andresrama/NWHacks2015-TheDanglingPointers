@@ -122,9 +122,6 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mojio = MojioClient.client() as? MojioClient
-        
-    
-        
         getEvents()
     }
     
@@ -143,11 +140,16 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     func getEvents() {
         func success(data : AnyObject!) {
             println("Success")
-            println(data)
-            let arr = data as [AnyObject]
+            //println(data)
+            let arr = data as [Event]
             println(arr.count)
             for item in arr {
-                println(item)
+                let formatter: NSDateFormatter = NSDateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+                let date: NSDate = formatter.dateFromString(item.Time)!
+                println(date)
+                println(item.FuelEfficiency)
             }
         }
         
@@ -159,7 +161,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         let mojio = self.mojio!
         if (mojio.isUserLoggedIn()) {
             let queryOptions = [
-                "limit": 10,
+                "limit": 1000,
                 "offset": 0,
                 "desc": "true"
             ]
