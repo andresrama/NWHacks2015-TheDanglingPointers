@@ -31,7 +31,8 @@ class FirstViewController: UIViewController {
             graph: self.graph,
             graphView: self.graphView,
             view: view,
-            fuelEff: true)
+            fuelEff: true,
+            limit: 600)
         self.graphing!.regraph(onRegraph)
         self.graphing!.getEvents(onRegraph)
     }
