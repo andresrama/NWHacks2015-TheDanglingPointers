@@ -125,9 +125,15 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         
         //Andys code. please no delete ty
         graph.title = "Tittle"
+        graph.plotAreaFrame.paddingTop = 10
         graph.plotAreaFrame.paddingBottom = 50
         graph.plotAreaFrame.paddingLeft = 50
         graph.plotAreaFrame.paddingRight = 50
+        
+        
+        var axes = graph.axisSet as CPTXYAxisSet
+        axes.xAxis.title = "X-AXIS"
+        axes.yAxis.title = "Y-AXIS"
         
         
         self.graphView.hostedGraph = graph
