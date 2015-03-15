@@ -10,7 +10,10 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    @IBOutlet weak var offsetButton: UIButton!
    
-  
+    override func viewDidAppear(animated: Bool) {
+        offsetButton.layer.cornerRadius = 10
+    }
 }
 
