@@ -108,13 +108,13 @@
                                 <color key="textColor" red="0.0" green="0.00023050479059999999" blue="0.75297900880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wR-l2-QVD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wR-l2-QVD">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-oY-7lf">
-                                <rect key="frame" x="239" y="95" width="98" height="48"/>
+                                <rect key="frame" x="239" y="89" width="98" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="ROU-J2-gu3"/>
                                     <constraint firstAttribute="width" constant="298" id="wiW-ZK-Qbu"/>
@@ -165,7 +165,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awB-on-9Na">
-                                <rect key="frame" x="345" y="113" width="32" height="30"/>
+                                <rect key="frame" x="345" y="109" width="32" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="wPV-KE-6Ox"/>
                                 </constraints>
@@ -197,7 +197,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddy-x8-GE1">
-                                <rect key="frame" x="279" y="151" width="42" height="30"/>
+                                <rect key="frame" x="267" y="137" width="66" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Offset">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -228,20 +229,20 @@
                             <constraint firstItem="Ddy-x8-GE1" firstAttribute="leading" secondItem="1wR-l2-QVD" secondAttribute="leading" id="VPR-tr-8aX"/>
                             <constraint firstItem="4b1-au-yHj" firstAttribute="leading" secondItem="Vs6-nQ-tIm" secondAttribute="trailing" constant="8" symbolic="YES" id="Vzh-wF-MzG"/>
                             <constraint firstItem="4b1-au-yHj" firstAttribute="baseline" secondItem="Vs6-nQ-tIm" secondAttribute="firstBaseline" id="ZFT-Yi-Qik"/>
-                            <constraint firstItem="Ddy-x8-GE1" firstAttribute="top" secondItem="Cmh-oY-7lf" secondAttribute="bottom" constant="8" id="bsX-qC-hG8"/>
+                            <constraint firstItem="Ddy-x8-GE1" firstAttribute="top" secondItem="Cmh-oY-7lf" secondAttribute="bottom" id="bsX-qC-hG8"/>
                             <constraint firstItem="DOl-6B-gNK" firstAttribute="top" secondItem="Vs6-nQ-tIm" secondAttribute="bottom" constant="86" id="dAK-mu-9F2"/>
-                            <constraint firstItem="1wR-l2-QVD" firstAttribute="leading" secondItem="Ddy-x8-GE1" secondAttribute="leading" id="feC-SG-L2Y"/>
+                            <constraint firstItem="1wR-l2-QVD" firstAttribute="leading" secondItem="Ddy-x8-GE1" secondAttribute="leading" constant="-279" id="feC-SG-L2Y"/>
                             <constraint firstItem="UYV-LW-cRG" firstAttribute="top" secondItem="4wL-mF-vZc" secondAttribute="bottom" constant="8" id="fjl-De-xeL"/>
                             <constraint firstItem="zRL-vN-5Hd" firstAttribute="baseline" secondItem="DOl-6B-gNK" secondAttribute="firstBaseline" id="fwJ-RS-G8Y"/>
                             <constraint firstItem="0o5-3d-6X6" firstAttribute="leading" secondItem="up4-09-nnQ" secondAttribute="trailing" constant="8" symbolic="YES" id="goH-XF-IUt"/>
-                            <constraint firstItem="Cmh-oY-7lf" firstAttribute="top" secondItem="Y56-UB-OQa" secondAttribute="bottom" constant="31" id="goY-VS-UcB"/>
+                            <constraint firstItem="Cmh-oY-7lf" firstAttribute="top" secondItem="Y56-UB-OQa" secondAttribute="bottom" constant="25" id="goY-VS-UcB"/>
                             <constraint firstItem="Vs6-nQ-tIm" firstAttribute="leading" secondItem="UYV-LW-cRG" secondAttribute="leading" id="kGv-7C-vaz"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="DOl-6B-gNK" secondAttribute="bottom" constant="58" id="lDE-Fp-9nt"/>
                             <constraint firstItem="Y56-UB-OQa" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="lpb-L2-5MS"/>
                             <constraint firstItem="Enz-Yo-p0m" firstAttribute="baseline" secondItem="RIq-YQ-f1f" secondAttribute="baseline" id="mRp-Qw-xmX"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="awB-on-9Na" secondAttribute="bottom" constant="390" id="rS1-Pr-2si"/>
                             <constraint firstItem="1wR-l2-QVD" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" constant="87" id="rVX-91-L77"/>
-                            <constraint firstItem="awB-on-9Na" firstAttribute="top" secondItem="Y56-UB-OQa" secondAttribute="bottom" constant="49" id="s7o-St-pBF"/>
+                            <constraint firstItem="awB-on-9Na" firstAttribute="top" secondItem="Y56-UB-OQa" secondAttribute="bottom" constant="45" id="s7o-St-pBF"/>
                             <constraint firstItem="Enz-Yo-p0m" firstAttribute="baseline" secondItem="4wL-mF-vZc" secondAttribute="firstBaseline" id="ueA-Gl-eZl"/>
                             <constraint firstItem="0o5-3d-6X6" firstAttribute="baseline" secondItem="up4-09-nnQ" secondAttribute="baseline" id="urV-rG-7qn"/>
                             <constraint firstItem="UYV-LW-cRG" firstAttribute="baseline" secondItem="up4-09-nnQ" secondAttribute="baseline" id="wew-I4-X0Z"/>
@@ -255,9 +256,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="rVX-91-L77"/>
                                 <exclude reference="4Kr-Y3-8Iw"/>
                                 <exclude reference="wh1-dy-TOW"/>
-                                <exclude reference="rVX-91-L77"/>
                                 <exclude reference="0V6-Ej-GA8"/>
                                 <exclude reference="8b1-FB-gUe"/>
                                 <exclude reference="VPR-tr-8aX"/>
