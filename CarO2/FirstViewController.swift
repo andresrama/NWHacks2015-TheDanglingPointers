@@ -83,6 +83,8 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         axes.xAxis.title = "X-AXIS"
         axes.yAxis.title = "Y-AXIS"
         
+        axes.yAxis.titleOffset = 35
+        
         var xLineStyle = CPTMutableLineStyle()
         xLineStyle.lineColor = blue
         xLineStyle.lineWidth = CGFloat(1)
