@@ -39,7 +39,8 @@ class SecondViewController: UIViewController {
             graph: self.fuelGraph,
             graphView: self.fuelGH,
             view: view,
-            fuelEff: true)
+            fuelEff: true,
+            limit: 100)
         self.fuelGr!.regraph(gggfff)
         self.fuelGr!.getEvents(gggfff)
         
@@ -48,7 +49,8 @@ class SecondViewController: UIViewController {
             graph: self.co2Graph,
             graphView: self.co2GH,
             view: view,
-            fuelEff: false)
+            fuelEff: false,
+            limit: 100)
         self.co2Gr!.regraph(gggccc)
         self.co2Gr!.getEvents(gggccc)
     }

@@ -16,14 +16,16 @@ class Graphing : NSObject, CPTPlotDataSource {
     var view : UIView!
     var graphView : CPTGraphHostingView
     var fuelEff : Bool
+    var limit : Int
     
     
-    init(mojio:MojioClient, graph : CPTXYGraph, graphView: CPTGraphHostingView, view: UIView!, fuelEff: Bool) {
+    init(mojio:MojioClient, graph : CPTXYGraph, graphView: CPTGraphHostingView, view: UIView!, fuelEff: Bool, limit:Int) {
         self.mojio = mojio
         self.graph = graph
         self.graphView = graphView
         self.view = view
         self.fuelEff = fuelEff
+        self.limit = limit
     }
     
     
@@ -220,7 +222,7 @@ class Graphing : NSObject, CPTPlotDataSource {
         let mojio = self.mojio
         if (mojio.isUserLoggedIn()) {
             let queryOptions = [
-                "limit": 1000,
+                "limit": self.limit,
                 "offset": 0,
             ]
             
@@ -230,7 +232,7 @@ class Graphing : NSObject, CPTPlotDataSource {
                 let latestTrip = arrTrips[arrTrips.count - 1]
                 
                 let queryOptions = [
-                    "limit": 1000,
+                    "limit": self.limit,
                     "offset": 0,
                     "id": latestTrip._id
                 ]

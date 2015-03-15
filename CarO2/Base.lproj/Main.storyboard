@@ -660,6 +660,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="CO₂" image="cloud" id="9CM-NW-u88"/>
+                    <connections>
+                        <outlet property="avgL" destination="U3l-9y-ims" id="spG-6I-KGI"/>
+                        <outlet property="gggggg" destination="fgT-sF-3g5" id="IQK-K3-23M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b8-oB-KVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

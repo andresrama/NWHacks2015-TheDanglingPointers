@@ -9,10 +9,31 @@
 import UIKit
 
 class ThirdViewController: UIViewController {
+    var mojio : MojioClient?
+    
+    var graphing : Graphing?
+    
+    //Graph item thing
+    var graph = CPTXYGraph(frame: CGRectZero)
+    
+    
+    @IBOutlet weak var gggggg: CPTGraphHostingView!
+    @IBOutlet weak var avgL: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.mojio = MojioClient.client() as? MojioClient
+        
+        self.graphing = Graphing(
+            mojio: self.mojio!,
+            graph: self.graph,
+            graphView: self.gggggg,
+            view: view,
+            fuelEff: false,
+            limit: 600)
+        self.graphing!.regraph(onRegraph)
+        self.graphing!.getEvents(onRegraph)
     }
     
     override func didReceiveMemoryWarning() {
@@ -21,6 +42,18 @@ class ThirdViewController: UIViewController {
     }
     
     
+    func onRegraph() {
+        let graphing = self.graphing!
+        
+        var numFormatter : NSNumberFormatter = NSNumberFormatter()
+        numFormatter.maximumFractionDigits = 1
+
+        
+        if let average = (numFormatter.stringFromNumber(graphing.co2Avg)) {
+            avgL.text = average
+        }
+    }
+
 }
 
 
