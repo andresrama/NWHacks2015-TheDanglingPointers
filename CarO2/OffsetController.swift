@@ -12,6 +12,7 @@ class OffsetController: UIViewController {
     
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var finishButton: UIButton!
     
     @IBAction func finish(sender: AnyObject) {
         textField.resignFirstResponder()
@@ -23,5 +24,6 @@ class OffsetController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(true)
         textField.becomeFirstResponder()
+        finishButton.layer.cornerRadius = 10
     }
 }

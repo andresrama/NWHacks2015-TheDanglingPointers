@@ -64,7 +64,7 @@
     if ([self isUserLoggedIn]) {
         self.loginCompletionBlock();
     } else {
-        NSString *urlString = [NSString stringWithFormat:@"https://api.moj.io/OAuth2/authorize?response_type=token&client_id=%@&redirect_uri=%@", self.appId, self.redirectUrlScheme];
+        NSString *urlString = [NSString stringWithFormat:@"https://api.moj.io/OAuth2Sandbox/authorize?response_type=token&client_id=%@&redirect_uri=%@", self.appId, self.redirectUrlScheme];
         NSURL *url = [NSURL URLWithString:urlString];
         [[UIApplication sharedApplication] openURL:url];
     }
