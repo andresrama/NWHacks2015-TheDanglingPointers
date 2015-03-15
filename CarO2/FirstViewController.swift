@@ -116,28 +116,16 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     }
     
     //Graph item thing
-    var currentPlot = CPTXYGraph(frame: CGRectZero)
+    var graph = CPTXYGraph(frame: CGRectZero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        plotGraph(currentPlot,
-            dataSource: self,
-            tittle: "Function Plotted Line Graph",
-            xLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
-            xLineWidth: 1,
-            yLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
-            yLineWidth: 0,
-            xRangeLegnth: 25,
-            yRangeLegnth: 10,
-            dataLineColor : CPTColor(componentRed: 0.3, green: 0.5, blue: 0.4, alpha: 50),
-            dataLineWidth : 1,
-            paddingLeft: 0,
-            paddingRight: 0,
-            paddingTop: 0,
-            paddingBottom: 0,
-            backgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0.0]),
-            previousPlot: nil)
+        graph.title = "GRAPH TITTLE"
+        graph.plotAreaFrame.paddingTop = 50
+        graph.plotAreaFrame.paddingLeft = 50
+        graph.plotAreaFrame.paddingRight = 50
+        
     }
     
     
