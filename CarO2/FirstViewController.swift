@@ -85,7 +85,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             
             axes.yAxis.majorGridLineStyle = gridLineStyle
             
-            //TEST
+            //TESTTEST
             
             //Axes properties
             var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
