@@ -19,19 +19,18 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         return 25
     }
     
-    var isUpdating = false
+    var maxHeight = 26
+    var desiredMaxHeight = 10
     
     func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex idx: UInt) -> NSNumber! {
-        var rand = Int(arc4random_uniform(26))
-        var mult = 1
-        if(isUpdating){
-            mult = 2
-        }
+        var rand = Float(arc4random_uniform(26))
+        var mult = Float(desiredMaxHeight) / Float(maxHeight)
+        var yResult = rand * mult
         switch(fieldEnum){
         case 0:
             return idx
         case 1:
-            return rand
+            return yResult
         default:
             return 0
             
@@ -85,8 +84,6 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             
             axes.yAxis.majorGridLineStyle = gridLineStyle
             
-            //TESTTEST
-            
             //Axes properties
             var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
             var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
@@ -96,6 +93,9 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             
             plotSpace.xRange = xRange
             plotSpace.yRange = yRange
+            
+            //Axes labels oh god why
+            //axes.xAxis.la
             
             //Line settings
             var line = CPTScatterPlot(frame: view.frame)
@@ -129,7 +129,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             yLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
             yLineWidth: 0,
             xRangeLegnth: 25,
-            yRangeLegnth: 30,
+            yRangeLegnth: 10,
             dataLineColor : CPTColor(componentRed: 0.3, green: 0.5, blue: 0.4, alpha: 50),
             dataLineWidth : 1,
             paddingLeft: 0,
@@ -148,13 +148,6 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     }
     
     @IBAction func TestButton(sender: AnyObject) {
-        isUpdating = !isUpdating
-        var color : CGColor
-        if(isUpdating){
-            color = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 255, 0, 0.01])
-        }else{
-            color = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 255, 0.01])
-        }
         currentPlot.reloadData()
         
         
