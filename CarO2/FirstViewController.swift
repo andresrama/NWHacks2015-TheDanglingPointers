@@ -75,13 +75,15 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         
         graph.title = "Tittle"
         graph.plotAreaFrame.paddingTop = 5
-        graph.plotAreaFrame.paddingBottom = 0
-        graph.plotAreaFrame.paddingLeft = 0
+        graph.plotAreaFrame.paddingBottom = 40
+        graph.plotAreaFrame.paddingLeft = 60
         graph.plotAreaFrame.paddingRight = 5
         
         var axes = graph.axisSet as CPTXYAxisSet
         axes.xAxis.title = "X-AXIS"
         axes.yAxis.title = "Y-AXIS"
+        
+        axes.yAxis.titleOffset = 35
         
         var xLineStyle = CPTMutableLineStyle()
         xLineStyle.lineColor = blue
@@ -96,7 +98,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         
         //axes.yAxis.majorTickLength = 50
         //axes.yAxis.minorTickLength = 10
-        axes.yAxis.minorTicksPerInterval = 50
+        axes.yAxis.minorTicksPerInterval = 1
         
         axes.xAxis.labelRotation = CGFloat(π/2.0)
         //axes.xAxis.majorTickLength = 50
@@ -104,8 +106,14 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         axes.xAxis.majorTickLength = 10
         axes.xAxis.minorTickLength = 10
         axes.xAxis.minorTicksPerInterval = 1
-        axes.xAxis.preferredNumberOfMajorTicks = 5
-        
+
+
+        axes.xAxis.labelingPolicy = CPTAxisLabelingPolicy.Automatic
+        axes.xAxis.preferredNumberOfMajorTicks = 10
+
+        axes.yAxis.labelingPolicy = CPTAxisLabelingPolicy.Automatic
+        axes.yAxis.preferredNumberOfMajorTicks = 5
+
         var gridLineStyle = CPTMutableLineStyle()
         gridLineStyle.lineColor = grey
         gridLineStyle.lineWidth = CGFloat(0.4)
@@ -211,7 +219,7 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         let mojio = self.mojio!
         if (mojio.isUserLoggedIn()) {
             let queryOptions = [
-                "limit": 1000,
+                "limit": 200,
                 "offset": 0,
                 "desc": "true"
             ]
