@@ -11,6 +11,8 @@ import UIKit
 class FirstViewController: UIViewController, CPTPlotDataSource {
     var mojio : MojioClient?
     
+    let π = M_PI
+    
     //Graph item outlet
     
     @IBOutlet weak var graphView: CPTGraphHostingView!
@@ -95,9 +97,6 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         plotSpace.xRange = xRange
         plotSpace.yRange = yRange
         
-        //Axes labels oh god why
-        //axes.xAxis.la
-        
         //Line settings
         var line = CPTScatterPlot(frame: view.frame)
         line.dataSource = dataSource
@@ -124,18 +123,61 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         self.mojio = MojioClient.client() as? MojioClient
         
         //Andys code. please no delete ty
+        //My "Globals"
+        var blue = CPTColor(componentRed: 0.0, green: 0.0, blue: 1.0, alpha: 0.5)
+        var grey = CPTColor(componentRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.1)
+        var green = CPTColor(componentRed: 0.3, green: 0.6, blue: 0.4, alpha: 1.0)
+        
         graph.title = "Tittle"
         graph.plotAreaFrame.paddingTop = 10
         graph.plotAreaFrame.paddingBottom = 50
         graph.plotAreaFrame.paddingLeft = 50
         graph.plotAreaFrame.paddingRight = 50
         
-        
         var axes = graph.axisSet as CPTXYAxisSet
         axes.xAxis.title = "X-AXIS"
         axes.yAxis.title = "Y-AXIS"
         
+        var xLineStyle = CPTMutableLineStyle()
+        xLineStyle.lineColor = blue
+        xLineStyle.lineWidth = CGFloat(1)
         
+        var yLineStyle = CPTMutableLineStyle()
+        yLineStyle.lineColor = green
+        yLineStyle.lineWidth = CGFloat(0.7)
+        
+        axes.xAxis.axisLineStyle = xLineStyle
+        axes.yAxis.axisLineStyle = yLineStyle
+        
+        axes.xAxis.labelRotation = CGFloat(π/2.0)
+        
+        var gridLineStyle = CPTMutableLineStyle()
+        gridLineStyle.lineColor = grey
+        gridLineStyle.lineWidth = CGFloat(0.4)
+        
+        axes.yAxis.majorGridLineStyle = gridLineStyle
+        
+        var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
+        var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
+        var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
+        xRange.setLengthFloat(25)
+        yRange.setLengthFloat(10)
+        
+        plotSpace.xRange = xRange
+        plotSpace.yRange = yRange
+        
+        var line = CPTScatterPlot(frame: view.frame)
+        
+        var dataLineStyle = CPTMutableLineStyle()
+        dataLineStyle.lineColor = green
+        dataLineStyle.lineWidth = CGFloat(2.0)
+        dataLineStyle.lineJoin = kCGLineJoinRound
+        
+        line.dataLineStyle = dataLineStyle
+        line.alignsPointsToPixels = true
+        
+        line.dataSource = self
+        graph.addPlot(line)
         self.graphView.hostedGraph = graph
         
         //You can put stuff after too. just dont fuck me k?
