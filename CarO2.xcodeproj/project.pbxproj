@@ -18,6 +18,7 @@
 		18C678C51AB3B3AE0014180C /* CarO2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678C41AB3B3AE0014180C /* CarO2Tests.swift */; };
 		18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */; };
 		51796C821AB54E3A00DA23CE /* OffsetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51796C811AB54E3A00DA23CE /* OffsetController.swift */; };
+		51796C841AB5971000DA23CE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51796C831AB5971000DA23CE /* AboutViewController.swift */; };
 		517D5F671AB401BC0005815A /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D5F661AB401BC0005815A /* TabViewController.swift */; };
 		781E1BD21AB530D7000770F8 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 781E1BD11AB530D7000770F8 /* Event.m */; };
 		78B884CB1AB4DD7B00338FD1 /* MojioClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B884C91AB4DD7B00338FD1 /* MojioClient.m */; };
@@ -71,6 +72,7 @@
 		18C678C41AB3B3AE0014180C /* CarO2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarO2Tests.swift; sourceTree = "<group>"; };
 		18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		51796C811AB54E3A00DA23CE /* OffsetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetController.swift; sourceTree = "<group>"; };
+		51796C831AB5971000DA23CE /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		517D5F661AB401BC0005815A /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		781E1BD11AB530D7000770F8 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		781E1BD31AB530E8000770F8 /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				18C678AC1AB3B3AE0014180C /* AppDelegate.swift */,
+				51796C831AB5971000DA23CE /* AboutViewController.swift */,
 				51796C811AB54E3A00DA23CE /* OffsetController.swift */,
 				517D5F661AB401BC0005815A /* TabViewController.swift */,
 				18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */,
@@ -427,6 +430,7 @@
 				78B885021AB4DD8400338FD1 /* Token.m in Sources */,
 				78B884F31AB4DD8400338FD1 /* Address.m in Sources */,
 				78B885011AB4DD8400338FD1 /* Storage.m in Sources */,
+				51796C841AB5971000DA23CE /* AboutViewController.swift in Sources */,
 				78B884F41AB4DD8400338FD1 /* App.m in Sources */,
 				18C678AD1AB3B3AE0014180C /* AppDelegate.swift in Sources */,
 				78B884CB1AB4DD7B00338FD1 /* MojioClient.m in Sources */,
