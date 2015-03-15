@@ -85,15 +85,15 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         var grey = CPTColor(componentRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.1)
         var green = CPTColor(componentRed: 0.3, green: 0.6, blue: 0.4, alpha: 1.0)
         
-        graph.title = "Tittle"
+        graph.title = ""
         graph.plotAreaFrame.paddingTop = 5
         graph.plotAreaFrame.paddingBottom = 60
-        graph.plotAreaFrame.paddingLeft = 60
-        graph.plotAreaFrame.paddingRight = 5
+        graph.plotAreaFrame.paddingLeft = 0
+        graph.plotAreaFrame.paddingRight = 0
         
         var axes = graph.axisSet as CPTXYAxisSet
-        axes.xAxis.title = "X-AXIS"
-        axes.yAxis.title = "Y-AXIS"
+        axes.xAxis.title = "Time"
+        axes.yAxis.title = "L/100km"
         
         axes.yAxis.titleOffset = 30
         axes.xAxis.titleOffset = 35
@@ -257,10 +257,17 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             println(self.max)
             
             var numFormatter : NSNumberFormatter = NSNumberFormatter()
-            numFormatter.formatWidth = 2
-            averageFE.text = "\(numFormatter.stringFromNumber(self.avg))"
-            bestFE.text = "\(numFormatter.stringFromNumber(self.effMax))"
-            worstFE.text = "\(numFormatter.stringFromNumber(self.effMin))"
+            numFormatter.maximumFractionDigits = 1
+            if let best = (numFormatter.stringFromNumber(self.effMin)){
+                bestFE.text = best
+            }
+            if let worst = (numFormatter.stringFromNumber(self.effMax)){
+                worstFE.text = worst
+            }
+            
+            if let average = (numFormatter.stringFromNumber(self.avg)) {
+                averageFE.text = average
+            }
             
             dispatch_semaphore_signal(ss)
             
