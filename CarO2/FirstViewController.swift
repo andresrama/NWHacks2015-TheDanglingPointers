@@ -28,7 +28,7 @@ class FirstViewController: UIViewController {
             graph: self.graph,
             graphView: self.graphView,
             view: view,
-            fuelEff: false)
+            fuelEff: true)
         self.graphing!.regraph()
         self.graphing!.getEvents()
     }
