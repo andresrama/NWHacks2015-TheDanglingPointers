@@ -213,6 +213,8 @@ class Graphing : NSObject, CPTPlotDataSource {
     var co2Max : Double = 0.0
     var co2Min : Double = 100.0
     
+    var nn : Double = 1.0
+    
     
     var timeMax : NSDate = NSDate(timeIntervalSince1970: 0)
     var timeMin : NSDate = NSDate(timeInterval: 1000, sinceDate: NSDate())
@@ -270,9 +272,12 @@ class Graphing : NSObject, CPTPlotDataSource {
                         
                     })
                     
+                    
+                    
                     self.eventsArray = pairs;
                     
                     let nnn = Double(self.eventsArray!.count)
+                    self.nn = nnn
                     self.effMin = self.eventsArray!.map({ $0.2 }).reduce(Double.infinity, { min($0, $1) })
                     self.effMax = self.eventsArray!.map({ $0.2 }).reduce(-Double.infinity, { max($0, $1) })
                     self.effAvg = self.eventsArray!.map({ $0.2 }).reduce(0.0, +) / nnn

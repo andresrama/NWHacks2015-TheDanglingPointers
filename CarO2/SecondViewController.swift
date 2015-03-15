@@ -26,6 +26,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var avgL: UILabel!
     @IBOutlet weak var avgCO2L: UILabel!
     
+    @IBOutlet weak var ttt: UILabel!
     override func viewDidAppear(animated: Bool) {
         offsetButton.layer.cornerRadius = 10
     }
@@ -69,6 +70,7 @@ class SecondViewController: UIViewController {
         
         if let average = (numFormatter.stringFromNumber(fuelGr.effAvg)) {
             avgL.text = average
+            
         }
     }
     
@@ -80,6 +82,12 @@ class SecondViewController: UIViewController {
         
         if let average = (numFormatter.stringFromNumber(co2Gr.co2Avg)) {
             avgCO2L.text = average
+        }
+        
+        
+        if let tttt = (numFormatter.stringFromNumber(
+            co2Gr.effAvg * Double(co2Gr.nn))) {
+                ttt.text = tttt
         }
     }
 }

@@ -554,6 +554,7 @@
                         <outlet property="co2GH" destination="HLO-EH-EVy" id="fqp-M7-OFD"/>
                         <outlet property="fuelGH" destination="rwL-DZ-QEb" id="tZ7-bc-JDB"/>
                         <outlet property="offsetButton" destination="0Et-Qu-T98" id="7WY-TS-fm1"/>
+                        <outlet property="ttt" destination="Cmh-oY-7lf" id="o04-1n-lXf"/>
                         <outlet property="worstL" destination="up4-09-nnQ" id="7UT-cj-Hsy"/>
                     </connections>
                 </viewController>
