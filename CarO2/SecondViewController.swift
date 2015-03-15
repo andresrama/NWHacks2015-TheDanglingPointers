@@ -8,86 +8,9 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, CPTPlotDataSource {
-    var mojio : MojioClient?
+class SecondViewController: UIViewController {
     
-    //Graph item outlet
-    @IBOutlet weak var graphView: CPTGraphHostingView!
-    
-    //Graph item thing
-    
-    
-    // Funcs to make the CPTPlotDataSource attribute true - Start
-    func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
-        return 100
-    }
-    
-    func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex idx: UInt) -> NSNumber! {
-        var rand = Int(arc4random_uniform(26))
-        switch(fieldEnum){
-        case 0:
-            return idx
-        case 1:
-            return rand
-        default:
-            return 0
-            
-        }
-    }
-    //End
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-                
-        // create graph
-        var graph = CPTXYGraph(frame: CGRectZero)
-        
-        //Tittle
-        graph.title = "Line Graph"
-        
-        //Padding
-        graph.paddingLeft = 0
-        graph.paddingTop = 0
-        graph.paddingRight = 0
-        graph.paddingBottom = 0
-        
-        //Axes set up...
-        var axes = graph.axisSet as CPTXYAxisSet
-        var lineStyle = CPTMutableLineStyle()
-        lineStyle.lineColor = CPTColor(componentRed: 255, green: 0, blue: 0, alpha: 50)
-        lineStyle.lineWidth = 1
-        axes.xAxis.axisLineStyle = lineStyle
-        axes.yAxis.axisLineStyle = lineStyle
-        
-        //Plot space/range set up...
-        var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
-        var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
-        var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
-        xRange.setLengthFloat(100)
-        yRange.setLengthFloat(40)
-        
-        plotSpace.xRange = xRange
-        plotSpace.yRange = yRange
-        
-        var line = CPTScatterPlot(frame: view.frame)
-        line.dataSource = self
-        line.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0.01])
-        
-        graph.addPlot(line)
-        
-        self.graphView.hostedGraph = graph
-    }
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func TestButton(sender: AnyObject) {
-    }
-    
-
+   
+  
 }
 

@@ -9,6 +9,6 @@
 import UIKit
 
 class TabViewController: UITabBarController, UIGestureRecognizerDelegate {
-    var mojio : MojioClient?
+    
     
 }
