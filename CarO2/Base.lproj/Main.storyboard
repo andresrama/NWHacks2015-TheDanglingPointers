@@ -38,8 +38,8 @@
                                     <navigationItem title="Fuel Efficiency " id="kJj-Jn-4eW"/>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JBM-5j-C3S" customClass="CPTGraphHostingView">
-                                <rect key="frame" x="0.0" y="85" width="600" height="198"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBM-5j-C3S" customClass="CPTGraphHostingView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="213"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -47,9 +47,9 @@
                         <constraints>
                             <constraint firstItem="kXS-Fq-OF3" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="8Vt-DU-zRf"/>
                             <constraint firstItem="kXS-Fq-OF3" firstAttribute="centerX" secondItem="JBM-5j-C3S" secondAttribute="centerX" id="Dvh-uh-X2c"/>
-                            <constraint firstItem="JBM-5j-C3S" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="GxA-yc-aFV"/>
+                            <constraint firstItem="JBM-5j-C3S" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="GxA-yc-aFV"/>
                             <constraint firstAttribute="trailing" secondItem="kXS-Fq-OF3" secondAttribute="trailing" id="bR2-rV-N31"/>
-                            <constraint firstItem="JBM-5j-C3S" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="63" id="gDE-H2-IbF"/>
+                            <constraint firstItem="JBM-5j-C3S" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="44" id="gDE-H2-IbF"/>
                             <constraint firstItem="kXS-Fq-OF3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="hXy-6s-Wqh"/>
                             <constraint firstItem="cXV-iL-LEw" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="jWu-zW-ldw"/>
                             <constraint firstItem="cXV-iL-LEw" firstAttribute="top" secondItem="JBM-5j-C3S" secondAttribute="bottom" constant="8" symbolic="YES" id="vpd-8z-aGM"/>
