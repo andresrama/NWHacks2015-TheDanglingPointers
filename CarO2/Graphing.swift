@@ -214,6 +214,7 @@ class Graphing : NSObject, CPTPlotDataSource {
     var co2Min : Double = 100.0
     
     var nn : Double = 1.0
+var tt : Double = 1.0
     
     
     var timeMax : NSDate = NSDate(timeIntervalSince1970: 0)
@@ -254,7 +255,7 @@ class Graphing : NSObject, CPTPlotDataSource {
                         
                         let distance = prevDist + Double(cur.Speed) * (d.timeIntervalSinceDate(prevd))/(60.0*60.0)
                         let deltaFuel = distance * Double(cur.FuelEfficiency) - prevDist * Double(prv.FuelEfficiency)
-                        let deltaCO2 = max(0.0, 1e6 * (deltaFuel * 2.3035e-1) / (d.timeIntervalSinceDate(prevd)*1e3))
+                        let deltaCO2 = max(0.0, 1e3 * (deltaFuel * 2.3035e-1) / (d.timeIntervalSinceDate(prevd)*1e3))
                         let totalCO2 = distance * Double(cur.FuelEfficiency) * 2.3035
                         
                         prevDist = distance;
@@ -276,7 +277,9 @@ class Graphing : NSObject, CPTPlotDataSource {
                     
                     self.eventsArray = pairs;
                     
-                    let nnn = Double(self.eventsArray!.count)
+                    let nnn = Double(pairs.count)
+                    let ttt = Double(self.timeMax.timeIntervalSince1970 - self.timeMin.timeIntervalSince1970) / (3600.0)
+                    self.tt = ttt
                     self.nn = nnn
                     self.effMin = self.eventsArray!.map({ $0.2 }).reduce(Double.infinity, { min($0, $1) })
                     self.effMax = self.eventsArray!.map({ $0.2 }).reduce(-Double.infinity, { max($0, $1) })
@@ -284,7 +287,7 @@ class Graphing : NSObject, CPTPlotDataSource {
                     
                     self.co2Min = self.eventsArray!.map({ $0.1 }).reduce(Double.infinity, { min($0, $1) })
                     self.co2Max = self.eventsArray!.map({ $0.1 }).reduce(-Double.infinity, { max($0, $1) })
-                    self.co2Avg = self.eventsArray!.map({ $0.1 }).reduce(0.0, +) / nnn
+                    self.co2Avg = self.eventsArray!.map({ $0.1 }).reduce(0.0, +) / ttt
                     
                     println("e=(\(self.effMin), \(self.effMax), \(self.effAvg))")
                     println("c=(\(self.co2Min), \(self.co2Max), \(self.co2Avg))")

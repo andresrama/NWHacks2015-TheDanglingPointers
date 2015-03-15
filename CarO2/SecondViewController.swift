@@ -86,7 +86,7 @@ class SecondViewController: UIViewController {
         
         
         if let tttt = (numFormatter.stringFromNumber(
-            co2Gr.effAvg * Double(co2Gr.nn))) {
+            co2Gr.co2Avg * Double(co2Gr.tt) * 3600.0 * 1e-3)) {
                 ttt.text = tttt
         }
     }
