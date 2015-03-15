@@ -64,7 +64,7 @@
     if ([self isUserLoggedIn]) {
         self.loginCompletionBlock();
     } else {
-        NSString *urlString = [NSString stringWithFormat:@"https://api.moj.io/OAuth2/authorize?response_type=token&client_id=%@&redirect_uri=%@", self.appId, self.redirectUrlScheme];
+        NSString *urlString = [NSString stringWithFormat:@"https://api.moj.io/OAuth2Sandbox/authorize?response_type=token&client_id=%@&redirect_uri=%@", self.appId, self.redirectUrlScheme];
         NSURL *url = [NSURL URLWithString:urlString];
         [[UIApplication sharedApplication] openURL:url];
     }
@@ -134,25 +134,38 @@
         if ([responseObject isKindOfClass:[NSData class]]) {
             NSString *responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
             id jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+            NSLog(@"%@", jsonObject);
             if (jsonObject != nil) {
                 if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+                    NSLog(@"1");
                     NSString *type = [jsonObject objectForKey:@"Type"];
+                    NSLog(@"2");
                     NSArray *data = [jsonObject objectForKey:@"Data"];
+                    NSLog(@"3");
                     if (type != nil) {
                         NSError *err;
                         id object = [[NSClassFromString(type) alloc] initWithDictionary:jsonObject error:&err];
+                        NSLog(@"4");
                         if (success != nil) {
+                            NSLog(@"5");
                             success(object);
                             return;
                         }
                     } else if (data != nil) {
+                        NSLog(@"6");
                         NSMutableArray *jsonObjects = [NSMutableArray array];
+                        NSLog(@"7");
                         for (NSDictionary *dict in data) {
+                            NSLog(@"8");
                             NSError *err;
                             NSString *type = [dict objectForKey:@"Type"];
+                            NSLog(@"9 %@", type);
                             id object = [[NSClassFromString(type) alloc] initWithDictionary:dict error:&err];
+                            NSLog(@"10 jos=%@ jo=%@ o=%@", jsonObjects, jsonObject, object);
                             [jsonObjects addObject:object];
+                            NSLog(@"11");
                         }
+                        NSLog(@"12");
                         if (success != nil) {
                             success(jsonObjects);
                             return;

@@ -9,6 +9,9 @@
 import UIKit
 
 class FirstViewController: UIViewController, CPTPlotDataSource {
+    var mojio : MojioClient?
+    
+    let π = M_PI
     
     //Graph item outlet
     
@@ -57,90 +60,131 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
         paddingBottom : Int,
         backgroundColor : CGColor,
         previousPlot : CPTPlot?){
-            
-            graph.title = title
-            graph.paddingLeft = CGFloat(paddingLeft)
-            graph.paddingRight = CGFloat(paddingLeft)
-            graph.paddingTop = CGFloat(paddingLeft)
-            graph.paddingBottom = CGFloat(paddingLeft)
-            
-            //Axes Line Style
-            var axes = graph.axisSet as CPTXYAxisSet
-            
-            var xLineStyle = CPTMutableLineStyle()
-            xLineStyle.lineColor = xLineColor
-            xLineStyle.lineWidth = CGFloat(xLineWidth)
-            
-            var yLineStyle = CPTMutableLineStyle()
-            yLineStyle.lineColor = yLineColor
-            yLineStyle.lineWidth = CGFloat(yLineWidth)
-            
-            axes.xAxis.axisLineStyle = xLineStyle
-            axes.yAxis.axisLineStyle = yLineStyle
-            
-            var gridLineStyle = CPTMutableLineStyle()
-            gridLineStyle.lineColor = CPTColor(componentRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.05)
-            gridLineStyle.lineWidth = CGFloat(0.4)
-            
-            axes.yAxis.majorGridLineStyle = gridLineStyle
-            
-            //Axes properties
-            var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
-            var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
-            var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
-            xRange.setLengthFloat(xRangeLegnth)
-            yRange.setLengthFloat(yRangeLegnth)
-            
-            plotSpace.xRange = xRange
-            plotSpace.yRange = yRange
-            
-            //Axes labels oh god why
-            //axes.xAxis.la
-            
-            //Line settings
-            var line = CPTScatterPlot(frame: view.frame)
-            line.dataSource = dataSource
-            line.backgroundColor = backgroundColor
-            
-            var dataLineStyle = CPTMutableLineStyle()
-            dataLineStyle.lineColor = dataLineColor
-            dataLineStyle.lineWidth = CGFloat(dataLineWidth)
-            dataLineStyle.lineJoin = kCGLineJoinRound
-            
-            line.dataLineStyle = dataLineStyle
-            line.alignsPointsToPixels = true
-            
-            //Finalize
-            graph.addPlot(line)
-            self.graphView.hostedGraph = graph
+        
+        graph.title = title
+        graph.paddingLeft = CGFloat(paddingLeft)
+        graph.paddingRight = CGFloat(paddingLeft)
+        graph.paddingTop = CGFloat(paddingLeft)
+        graph.paddingBottom = CGFloat(paddingLeft)
+        
+        //Axes Line Style
+        var axes = graph.axisSet as CPTXYAxisSet
+        
+        var xLineStyle = CPTMutableLineStyle()
+        xLineStyle.lineColor = xLineColor
+        xLineStyle.lineWidth = CGFloat(xLineWidth)
+        
+        var yLineStyle = CPTMutableLineStyle()
+        yLineStyle.lineColor = yLineColor
+        yLineStyle.lineWidth = CGFloat(yLineWidth)
+        
+        axes.xAxis.axisLineStyle = xLineStyle
+        axes.yAxis.axisLineStyle = yLineStyle
+        
+        var gridLineStyle = CPTMutableLineStyle()
+        gridLineStyle.lineColor = CPTColor(componentRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.05)
+        gridLineStyle.lineWidth = CGFloat(0.4)
+        
+        axes.yAxis.majorGridLineStyle = gridLineStyle
+        
+        //Axes properties
+        var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
+        var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
+        var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
+        xRange.setLengthFloat(xRangeLegnth)
+        yRange.setLengthFloat(yRangeLegnth)
+        
+        plotSpace.xRange = xRange
+        plotSpace.yRange = yRange
+        
+        //Line settings
+        var line = CPTScatterPlot(frame: view.frame)
+        line.dataSource = dataSource
+        line.backgroundColor = backgroundColor
+        
+        var dataLineStyle = CPTMutableLineStyle()
+        dataLineStyle.lineColor = dataLineColor
+        dataLineStyle.lineWidth = CGFloat(dataLineWidth)
+        dataLineStyle.lineJoin = kCGLineJoinRound
+        
+        line.dataLineStyle = dataLineStyle
+        line.alignsPointsToPixels = true
+        
+        //Finalize
+        graph.addPlot(line)
+        self.graphView.hostedGraph = graph
     }
     
     //Graph item thing
-    var currentPlot = CPTXYGraph(frame: CGRectZero)
-    
+    var graph = CPTXYGraph(frame: CGRectZero)
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mojio = MojioClient.client() as? MojioClient
         
-        plotGraph(currentPlot,
-            dataSource: self,
-            tittle: "Function Plotted Line Graph",
-            xLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
-            xLineWidth: 1,
-            yLineColor: CPTColor(componentRed: 0, green: 0, blue: 255, alpha: 50),
-            yLineWidth: 0,
-            xRangeLegnth: 25,
-            yRangeLegnth: 10,
-            dataLineColor : CPTColor(componentRed: 0.3, green: 0.5, blue: 0.4, alpha: 50),
-            dataLineWidth : 1,
-            paddingLeft: 0,
-            paddingRight: 0,
-            paddingTop: 0,
-            paddingBottom: 0,
-            backgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0.0]),
-            previousPlot: nil)
+        //Andys code. please no delete ty
+        //My "Globals"
+        var blue = CPTColor(componentRed: 0.0, green: 0.0, blue: 1.0, alpha: 0.5)
+        var grey = CPTColor(componentRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.1)
+        var green = CPTColor(componentRed: 0.3, green: 0.6, blue: 0.4, alpha: 1.0)
+        
+        graph.title = "Tittle"
+        graph.plotAreaFrame.paddingTop = 10
+        graph.plotAreaFrame.paddingBottom = 50
+        graph.plotAreaFrame.paddingLeft = 50
+        graph.plotAreaFrame.paddingRight = 50
+        
+        var axes = graph.axisSet as CPTXYAxisSet
+        axes.xAxis.title = "X-AXIS"
+        axes.yAxis.title = "Y-AXIS"
+        
+        var xLineStyle = CPTMutableLineStyle()
+        xLineStyle.lineColor = blue
+        xLineStyle.lineWidth = CGFloat(1)
+        
+        var yLineStyle = CPTMutableLineStyle()
+        yLineStyle.lineColor = green
+        yLineStyle.lineWidth = CGFloat(0.7)
+        
+        axes.xAxis.axisLineStyle = xLineStyle
+        axes.yAxis.axisLineStyle = yLineStyle
+        
+        axes.xAxis.labelRotation = CGFloat(π/2.0)
+        
+        var gridLineStyle = CPTMutableLineStyle()
+        gridLineStyle.lineColor = grey
+        gridLineStyle.lineWidth = CGFloat(0.4)
+        
+        axes.yAxis.majorGridLineStyle = gridLineStyle
+        
+        var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
+        var xRange = plotSpace.xRange.mutableCopy() as CPTMutablePlotRange
+        var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
+        xRange.setLengthFloat(25)
+        yRange.setLengthFloat(10)
+        
+        plotSpace.xRange = xRange
+        plotSpace.yRange = yRange
+        
+        var line = CPTScatterPlot(frame: view.frame)
+        
+        var dataLineStyle = CPTMutableLineStyle()
+        dataLineStyle.lineColor = green
+        dataLineStyle.lineWidth = CGFloat(2.0)
+        dataLineStyle.lineJoin = kCGLineJoinRound
+        
+        line.dataLineStyle = dataLineStyle
+        line.alignsPointsToPixels = true
+        
+        line.dataSource = self
+        graph.addPlot(line)
+        self.graphView.hostedGraph = graph
+        
+        //You can put stuff after too. just dont fuck me k?
+    
+        
+        getEvents()
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -148,11 +192,35 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
     }
     
     @IBAction func TestButton(sender: AnyObject) {
-        currentPlot.reloadData()
-        
-        
+        graph.reloadData()
     }
-    
-    
+
+    func getEvents() {
+        func success(data : AnyObject!) {
+            println("Success")
+            println(data)
+            let arr = data as [AnyObject]
+            println(arr.count)
+            for item in arr {
+                println(item)
+            }
+        }
+        
+        func failure(err : NSError!) {
+            println("Failure")
+            println(err)
+        }
+        
+        let mojio = self.mojio!
+        if (mojio.isUserLoggedIn()) {
+            let queryOptions = [
+                "limit": 10,
+                "offset": 0,
+                "desc": "true"
+            ]
+            
+            mojio.getEntityWithPath("Events", withQueryOptions: queryOptions, success: success, failure: failure)
+        }
+    }
 }
 
