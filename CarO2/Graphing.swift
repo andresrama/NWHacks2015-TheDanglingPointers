@@ -81,7 +81,7 @@ class Graphing : NSObject, CPTPlotDataSource {
         graph.title = ""
         graph.plotAreaFrame.paddingTop = 5
         graph.plotAreaFrame.paddingBottom = 60
-        graph.plotAreaFrame.paddingLeft = 60
+        graph.plotAreaFrame.paddingLeft = 10
         graph.plotAreaFrame.paddingRight = 5
         
         var axes = graph.axisSet as CPTXYAxisSet
