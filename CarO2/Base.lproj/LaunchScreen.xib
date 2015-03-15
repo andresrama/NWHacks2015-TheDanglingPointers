@@ -13,7 +13,7 @@
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" The Dangling Pointers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
                     <rect key="frame" x="20" y="439" width="441" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarO2green" translatesAutoresizingMaskIntoConstraints="NO" id="9f7-od-GtA">
@@ -24,6 +24,21 @@
                         <constraint firstAttribute="height" constant="300" id="muZ-i2-B1y"/>
                     </constraints>
                 </imageView>
+                <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58a-op-oje">
+                    <rect key="frame" x="0.0" y="249" width="480" height="107"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mojio-logo" translatesAutoresizingMaskIntoConstraints="NO" id="war-xx-QlY">
+                            <rect key="frame" x="194" y="24" width="92" height="59"/>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="war-xx-QlY" secondAttribute="centerX" id="0OR-d6-VGc"/>
+                        <constraint firstAttribute="height" constant="107" id="KRB-Df-zhW"/>
+                        <constraint firstAttribute="centerY" secondItem="war-xx-QlY" secondAttribute="centerY" id="o4H-PT-Izx"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.13225699875369198" green="0.67992888443256083" blue="0.23945451256811995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -31,7 +46,10 @@
                 <constraint firstItem="9f7-od-GtA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-75" id="E5e-bx-y87"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
+                <constraint firstItem="58a-op-oje" firstAttribute="top" secondItem="9f7-od-GtA" secondAttribute="bottom" constant="-66" id="PGa-dO-bgQ"/>
+                <constraint firstItem="58a-op-oje" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QWV-v7-SZ4"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstItem="58a-op-oje" firstAttribute="centerX" secondItem="9f7-od-GtA" secondAttribute="centerX" id="msl-0S-YE5"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -40,5 +58,6 @@
     </objects>
     <resources>
         <image name="CarO2green" width="1000" height="1000"/>
+        <image name="mojio-logo" width="92" height="59"/>
     </resources>
 </document>
