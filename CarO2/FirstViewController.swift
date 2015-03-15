@@ -147,24 +147,31 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
 
     }
     
+    var eventsArray : [(NSDate, Float)]? = nil
+    
     func getEvents() {
-        var eventsArray : [(NSDate, Double)]? = nil
+        let ss = dispatch_semaphore_create(0)
         
         func success(data : AnyObject!) {
             println("Success")
             //println(data)
             let arr = data as [Event]
+            
+            print("Items: ")
             println(arr.count)
-            for item in arr {
-                let date = makeDate(item.Time)
-                println(date)
-                println(item.FuelEfficiency)
-            }
+            
+            eventsArray = arr.map({ event in
+                let dt: (NSDate, Float) = (self.makeDate(event.Time), event.FuelEfficiency)
+                //println(dt)
+                return dt
+            })
+            dispatch_semaphore_signal(ss)
         }
         
         func failure(err : NSError!) {
             println("Failure")
             println(err)
+            dispatch_semaphore_signal(ss)
         }
         
         let mojio = self.mojio!
@@ -177,6 +184,12 @@ class FirstViewController: UIViewController, CPTPlotDataSource {
             
             mojio.getEntityWithPath("Events", withQueryOptions: queryOptions, success: success, failure: failure)
         }
+        
+        //let timeout = dispatch_time(DISPATCH_TIME_NOW, 100000000000)
+        //print("Wait outcome:")
+        //println(dispatch_semaphore_wait(ss, timeout))
+        //print("eventsArray == nil ?")
+        //println(eventsArray == nil)
     }
 }
 
