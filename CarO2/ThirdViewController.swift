@@ -17,6 +17,7 @@ class ThirdViewController: UIViewController {
     var graph = CPTXYGraph(frame: CGRectZero)
     
     
+    @IBOutlet weak var absorptionTime: UILabel!
     @IBOutlet weak var gggggg: CPTGraphHostingView!
     @IBOutlet weak var avgL: UILabel!
     
@@ -52,6 +53,12 @@ class ThirdViewController: UIViewController {
         if let average = (numFormatter.stringFromNumber(graphing.co2Avg)) {
             avgL.text = average
         }
+        
+        if let absorption = (numFormatter.stringFromNumber(
+            graphing.co2Avg * Double(graphing.tt) * 3600.0 * 1e-3 / 21.7724)) {
+                absorptionTime.text = absorption
+        }
+
     }
 
 }
