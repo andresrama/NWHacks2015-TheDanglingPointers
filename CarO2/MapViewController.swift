@@ -13,6 +13,7 @@ import Foundation
 
 class MapViewController : UIViewController, CLLocationManagerDelegate {
     var mojio : MojioClient?
+    let limit = 100
     let mgr = CLLocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
@@ -32,5 +33,11 @@ class MapViewController : UIViewController, CLLocationManagerDelegate {
         mapView.showsUserLocation = true
         
         mapView.addAnnotation(anno)
+    }
+    
+        
+    func handleFailure(err : NSError!) {
+        println("Failure")
+        println(err)
     }
 }

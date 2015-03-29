@@ -20,6 +20,7 @@
 		51796C821AB54E3A00DA23CE /* OffsetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51796C811AB54E3A00DA23CE /* OffsetController.swift */; };
 		51796C841AB5971000DA23CE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51796C831AB5971000DA23CE /* AboutViewController.swift */; };
 		517D5F671AB401BC0005815A /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D5F661AB401BC0005815A /* TabViewController.swift */; };
+		7807F1071AC796C60022169A /* TripData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7807F1061AC796C60022169A /* TripData.swift */; };
 		781E1BD21AB530D7000770F8 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 781E1BD11AB530D7000770F8 /* Event.m */; };
 		78281B101AB595DC00B67D61 /* Graphing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78281B0F1AB595DC00B67D61 /* Graphing.swift */; };
 		7842A5A21AC7800700825E17 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7842A5A11AC7800700825E17 /* MapViewController.swift */; };
@@ -77,6 +78,7 @@
 		51796C811AB54E3A00DA23CE /* OffsetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetController.swift; sourceTree = "<group>"; };
 		51796C831AB5971000DA23CE /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		517D5F661AB401BC0005815A /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		7807F1061AC796C60022169A /* TripData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripData.swift; path = CarO2/TripData.swift; sourceTree = SOURCE_ROOT; };
 		781E1BD11AB530D7000770F8 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		781E1BD31AB530E8000770F8 /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		78281B0F1AB595DC00B67D61 /* Graphing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graphing.swift; sourceTree = "<group>"; };
@@ -192,6 +194,8 @@
 				18C678CE1AB3BD8C0014180C /* ThirdViewController.swift */,
 				18C678AE1AB3B3AE0014180C /* FirstViewController.swift */,
 				18C678B01AB3B3AE0014180C /* SecondViewController.swift */,
+				78281B0F1AB595DC00B67D61 /* Graphing.swift */,
+				7807F1061AC796C60022169A /* TripData.swift */,
 				7842A5A11AC7800700825E17 /* MapViewController.swift */,
 				182DCBFC1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.h */,
 				182DCBFD1AB3F7B3002308FC /* CPTMutablePlotRange+SwiftCompat.m */,
@@ -199,7 +203,6 @@
 				18C678B51AB3B3AE0014180C /* Images.xcassets */,
 				18C678B71AB3B3AE0014180C /* LaunchScreen.xib */,
 				18C678AA1AB3B3AE0014180C /* Supporting Files */,
-				78281B0F1AB595DC00B67D61 /* Graphing.swift */,
 			);
 			path = CarO2;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				78B884F41AB4DD8400338FD1 /* App.m in Sources */,
 				18C678AD1AB3B3AE0014180C /* AppDelegate.swift in Sources */,
 				78B884CB1AB4DD7B00338FD1 /* MojioClient.m in Sources */,
+				7807F1071AC796C60022169A /* TripData.swift in Sources */,
 				18C678CF1AB3BD8C0014180C /* ThirdViewController.swift in Sources */,
 				78B884F61AB4DD8400338FD1 /* CarState.m in Sources */,
 				78B885051AB4DD8400338FD1 /* Vehicle.m in Sources */,
