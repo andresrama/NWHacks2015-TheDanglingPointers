@@ -13,6 +13,7 @@ import Foundation
 
 class MapViewController : UIViewController, CLLocationManagerDelegate {
     var mojio : MojioClient?
+    let mgr = CLLocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
@@ -24,8 +25,6 @@ class MapViewController : UIViewController, CLLocationManagerDelegate {
         anno.setCoordinate(coord)
         anno.title = "Hello, world!"
         
-        let mgr = CLLocationManager()
-        mgr.delegate = self
         mgr.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             mgr.startUpdatingLocation()
@@ -33,9 +32,5 @@ class MapViewController : UIViewController, CLLocationManagerDelegate {
         mapView.showsUserLocation = true
         
         mapView.addAnnotation(anno)
-    }
-
-    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-        mapView.showsUserLocation = true
     }
 }

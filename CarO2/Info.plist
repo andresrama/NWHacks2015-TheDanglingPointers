@@ -35,7 +35,7 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>NSLocationUsageDescription</key>
+	<key>NSLocationAlwaysUsageDescription</key>
 	<string>All your base are belong to us</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
