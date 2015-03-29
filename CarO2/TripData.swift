@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import CoreLocation
 
 class TripData : NSObject {
     var mojio : MojioClient
     var fuelEff : Bool
     var limit : Int
-
+    
     init(mojio: MojioClient, fuelEff: Bool, limit:Int) {
         self.mojio = mojio
         self.fuelEff = fuelEff
@@ -22,6 +23,8 @@ class TripData : NSObject {
     
     // datetime, deltaCO2, fuelEfficiency
     var eventsArray : [(NSDate, Double, Double)]? = nil
+    var latLonArray : [CLLocationCoordinate2D]?  = nil
+    var results : [Event]? = nil
     
     var effAvg : Double = 0.0
     var effMax : Double = 0.0
@@ -100,8 +103,7 @@ class TripData : NSObject {
                         
                         })
                     
-                    
-                    
+                    self.results = result
                     self.eventsArray = pairs;
                     
                     let nnn = Double(pairs.count)
@@ -118,7 +120,6 @@ class TripData : NSObject {
                     
                     println("e=(\(self.effMin), \(self.effMax), \(self.effAvg))")
                     println("c=(\(self.co2Min), \(self.co2Max), \(self.co2Avg))")
-                    
                     
                     onRegraph?()
                     println(pairs);
@@ -139,5 +140,5 @@ class TripData : NSObject {
         println("Failure")
         println(err)
     }
-
+    
 }
